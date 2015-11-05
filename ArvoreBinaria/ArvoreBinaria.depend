@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1335812171 source:c:\users\gabi\desktop\arvore\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../lib/DSGraph.h"
+
+1335812171 Graph.h"
+
+1314140394 c:\program files\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1314140394 .h>
+
+1314140392 c:\program files\codeblocks\mingw\include\_mingw.h
+
+1314140395 c:\program files\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1335008090 
+
+1314140394 c:\program files\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1335008090 c:\program files\codeblocks\mingw\lib\dsgraph.h
+	<stdlib.h>
+
+1335985508 source:/home/jairo/Dropbox/documentos/Acadêmicos/Cursos/Estruturas de Dados/Estruturas de Dados II/Algoritmos/Algoritmos Estruturas de Dados/ArvoreBinaria/main.c
+	<stdio.h>
+	<stdlib.h>
+	"DSGraph.h"
+

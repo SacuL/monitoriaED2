@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1349718587 source:/home/jairo/Dropbox/documentos/Acadêmicos/Cursos/Estruturas de Dados/Estruturas de Dados II/Algoritmos/Algoritmos Estruturas de Dados/ArvoreRubroNegra/main.c
+	<stdio.h>
+	<stdlib.h>
+	"DSGraph.h"
+

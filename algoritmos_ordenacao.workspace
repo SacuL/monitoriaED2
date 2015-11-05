@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="bubble_sort/bubble_sort.cbp" active="1" />
+		<Project filename="insertion_sort/insertion_sort.cbp" />
+		<Project filename="selection_sort/selection_sort.cbp" />
+		<Project filename="heap_sort/heap_sort.cbp" />
+		<Project filename="quick_sort/quick_sort.cbp" />
+		<Project filename="merge_sort/merge_sort.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
