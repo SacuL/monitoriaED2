@@ -1,0 +1,219 @@
+# depslib dependency file v1.0
+1447192770 source:c:\users\okty\desktop\representacao de arvore\src\01_quad.cpp
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\glut.h
+	"freeglut_std.h"
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447173584 c:\users\okty\desktop\representacao de arvore\include\no.h
+	<stdlib.h>
+
+1447194574 source:c:\users\okty\desktop\representacao de arvore\src\heapesq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1447194556 c:\users\okty\desktop\representacao de arvore\include\heapesq.h
+	"No.h"
+
+1447202532 source:c:\users\okty\desktop\representacao de arvore\src\imprimearvore.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeArvore.h>
+
+1447201746 source:c:\users\okty\desktop\representacao de arvore\src\main.cpp
+	<iostream>
+	<imprimeArvore.h>
+	<heapEsq.h>
+
+1447198181 c:\users\okty\desktop\representacao de arvore\include\imprimearvore.h
+	"No.h"
+
+1447757887 source:c:\users\okty\desktop\heapcontopengl2\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447180784 c:\users\okty\desktop\heapcontopengl2\include\no.h
+	<stdlib.h>
+
+1447690270 c:\users\okty\desktop\heapcontopengl2\include\imprimeestrutura.h
+	"No.h"
+
+1447759014 source:c:\users\okty\desktop\heapcontopengl2\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl2\include\heapcont.h
+
+1447759208 source:c:\users\okty\desktop\heapcontopengl2\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapCont.h>
+	<time.h>
+
+1447759936 source:c:\users\okty\desktop\heapcontopengl3\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl3\include\heapcont.h
+
+1448053235 source:c:\users\okty\desktop\heapcontopengl3\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl3\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl3\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447187984 c:\users\okty\desktop\heapcontopengl3\include\no.h
+	<stdlib.h>
+
+1447869768 c:\users\okty\desktop\heapcontopengl3\include\imprimeestrutura.h
+	"No.h"
+
+1448053256 source:c:\users\okty\desktop\heapcontopengl3\src\main.cpp
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	"hashing.h"
+	<time.h>
+
+1447868716 c:\users\okty\desktop\heapcontopengl3\include\hashing.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+
+1447869144 source:c:\users\okty\desktop\heapcontopengl3\src\hashing.cpp
+	"hashing.h"
+
+1448292968 source:c:\users\okty\desktop\funcoes_hashing\src\hashing.cpp
+	"hashing.h"
+
+1448292609 c:\users\okty\desktop\funcoes_hashing\include\hashing.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+
+1448067651 source:c:\users\okty\desktop\funcoes_hashing\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+
+1368316160 c:\users\okty\desktop\funcoes_hashing\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\funcoes_hashing\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447187984 c:\users\okty\desktop\funcoes_hashing\include\no.h
+	<stdlib.h>
+
+1448057167 c:\users\okty\desktop\funcoes_hashing\include\imprimeestrutura.h
+	"No.h"
+
+1448292863 source:c:\users\okty\desktop\funcoes_hashing\src\main.cpp
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	"hashing.h"
+	"imprimeEstrutura.h"
+	<time.h>
+	<string>
+
+1452877102 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\src\hashing.cpp
+	"hashing.h"
+	<math.h>
+
+1452877105 c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\include\hashing.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+
+1453074953 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+
+1452877105 c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\include\gl\glut.h
+	"freeglut_std.h"
+
+1452877105 c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1452877105 c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\include\no.h
+	<stdlib.h>
+
+1452877105 c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\include\imprimeestrutura.h
+	"No.h"
+
+1452877102 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\funções de hashing\src\main.cpp
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	"hashing.h"
+	"imprimeEstrutura.h"
+	<time.h>
+	<string>
+
