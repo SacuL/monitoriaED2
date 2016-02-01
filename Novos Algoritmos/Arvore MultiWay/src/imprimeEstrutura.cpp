@@ -11,7 +11,7 @@
 #include <thread>
 
 using namespace std;
-No* aux;
+No** aux;
 bool pause = false;
 float pos[] = {10.0,11.0};
 float raio = 0.4;
@@ -23,16 +23,18 @@ int window;
 int tipoEstrutura;
 int* graficoHashing;//Ponteiro para a tabela de contagem de colisoes de um hashing
 int tamGrafico;//
-int* NoCont;//Ponteiro para o vetor da arvore contigua
-int ult;//Ultimo indice da arvore contigua
+int** NoCont;//Ponteiro para o vetor da arvore contigua
+int* ult;//Ultimo indice da arvore contigua
 float dx = 0.0, dy = 0.0;
 Lista* listaHashing;
 int tamListaHashing;
 No_Lista* listaEncadeada;
 int* vet;
 int tamVet;
-heapBinomial* Binomial;
+No_Binomial** Binomial;
 No_Binomial* priBinomial;
+No_B** BTREE;
+No_MW** MWTREE;
 int auxWait;
 int ARGC;
 char** ARGV;
@@ -40,15 +42,16 @@ char* nomeJanela;
 thread *t1;
 clock_t inicio;
 int wait;
+bool full = false;
 
 void imprimeEstrutura::inicializa(){
 
     ///Callbacks OpenGl
    glutInit(&ARGC, ARGV);
    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_MULTISAMPLE);
-   glutInitWindowSize (1000, 600);
+   glutInitWindowSize (1066, 600);
    glutInitWindowPosition (100, 100);
-   //glutSetOption(0X01F9,1);
+   glutSetOption(0X01F9,1);
    glutIdleFunc(idle);
    window = glutCreateWindow (nomeJanela);
    init ();
@@ -135,9 +138,9 @@ void imprimeEstrutura::display(){
    glClear (GL_COLOR_BUFFER_BIT);
    glMatrixMode(GL_PROJECTION);              // Seleciona Matriz de Projeção
    glLoadIdentity();
-   if(tipoEstrutura == 1 || tipoEstrutura == 2 || tipoEstrutura == 5 || tipoEstrutura == 4 || tipoEstrutura == 6 || tipoEstrutura == 7){
+   if(tipoEstrutura == 1 || tipoEstrutura == 2 || tipoEstrutura == 5 || tipoEstrutura == 4 || tipoEstrutura == 6 || tipoEstrutura == 7 || tipoEstrutura == 8 || tipoEstrutura == 9){
 
-        glOrtho(0.0, XYcart, 0.0, XYcart*(3.0/5.0), -10.0, 10.0);
+        glOrtho(0.0, XYcart, 0.0, XYcart*(9.0/16.0), -10.0, 10.0);
 
    }else if(tipoEstrutura == 3){
 
@@ -157,7 +160,11 @@ void imprimeEstrutura::display(){
 
         }else{
 
-            percorreBinaria(aux, pos[0], pos[1], pow(2.0,(altura-2)));
+            if(*aux != NULL){
+
+                percorreBinaria(*aux, pos[0], pos[1], pow(2.0,(altura-2)));
+
+            }
 
         }
 
@@ -169,7 +176,11 @@ void imprimeEstrutura::display(){
 
         }else{
 
-            percorreBinariaCont(NoCont, 0, ult, pos[0], pos[1], pow(2.0,(altura-2)));
+            if(*ult > 0){
+
+                percorreBinariaCont(*NoCont, 0, *ult, pos[0], pos[1], pow(2.0,(altura-2)));
+
+            }
 
         }
 
@@ -242,7 +253,39 @@ void imprimeEstrutura::display(){
             float pos1[2];
             pos1[0] = 1.0 + dx;
             pos1[1] = XYcart * ( 3.0 / 5.5 )  + dy;
-            percorreHeapBinomial(pos1,Binomial->cabeca);
+            percorreHeapBinomial(pos1,*Binomial);
+
+        }
+
+
+    }else if(tipoEstrutura == 8){
+
+        if(BTREE == NULL){
+
+            cout << "Ponteiro para a arvore B vazia, verifique se voce apontou a estrutura para a arvore a ser impressa" << endl;
+
+        }else{
+
+            float pos1[2];
+            pos1[0] = 10.0 + dx;
+            pos1[1] = XYcart * ( 3.0 / 5.5 )  + dy;
+            percorreB(pos1,*BTREE,altura);
+
+        }
+
+
+    }else if(tipoEstrutura == 9){
+
+        if(MWTREE == NULL){
+
+            cout << "Ponteiro para a arvore MultiWay vazia, verifique se voce apontou a estrutura para a arvore a ser impressa" << endl;
+
+        }else{
+
+            float pos1[2];
+            pos1[0] = 10.0 + dx;
+            pos1[1] = XYcart * ( 3.0 / 6.0 )  + dy;
+            percorreMultiWay(pos1,*MWTREE,altura);
 
         }
 
@@ -268,13 +311,28 @@ void imprimeEstrutura::keyboard(unsigned char key, int x, int y){
         case 'p':
             pause = !pause;
         break;
+        case 'f':
+            full = !full;
+            if(full){
+
+                glutFullScreen();
+
+            }else{
+
+                glutReshapeWindow(1066,600);
+                glutPositionWindow(100,100);
+
+            }
+        break;
+        case 'e':
+            exit(0);
+        break;
 
     }
 }
-void imprimeEstrutura::setPriNoBinario(No* p){
+void imprimeEstrutura::setPriNoBinario(No** p){
 
     aux = p;
-    tipoEstrutura = tipo;
     altura = alturaArvore();
 
 
@@ -357,36 +415,33 @@ void imprimeEstrutura::fechaJanela(){
     glutDestroyWindow(window);
 
 }
-No* imprimeEstrutura::getPriBinario(){
-
-    return priBinario;
-
-}
 int imprimeEstrutura::alturaArvore(){
 
-    if(tipo == 1){
+    if(tipoEstrutura == ARVORE_BINARIA){
 
-        return alturaArvoreBinaria(priBinario,0);
+        return alturaArvoreBinaria(*aux,0);
 
-    }else if(tipo == 2){
+    }else if(tipoEstrutura == ARVORE_BINARIA_CONTIGUA){
 
-        cout << "ultimo indice carregado "<<ultIndiceCont <<endl;
-        return alturaArvoreBinariaCont(priBinarioCont,ultIndiceCont);
+        return alturaArvoreBinariaCont(*NoCont,*ult);
 
-    }else{
+    }else if(tipoEstrutura == ARVORE_B){
 
-        cout<<"Talvez voce selecionou uma estrutura nao suportada quando inicializou a estrutura";
-        exit(1);
+        return alturaArvoreB(*BTREE);
+
+    }else if(tipoEstrutura == ARVORE_MULTIWAY){
+
+        return alturaArvoreMultiWay(*MWTREE);
 
     }
+    return 0;
 
 }
-void imprimeEstrutura::setPriNoBinarioCont(int* tree, int ultIndice){
+void imprimeEstrutura::setPriNoBinarioCont(int** tree, int* ultIndice){
 
     NoCont = tree;
     ult = ultIndice;
-    altura = alturaArvore();
-
+    altura = 0;
 }
 int imprimeEstrutura::alturaArvoreBinariaCont(int* tree, int ultIndice){
 
@@ -774,7 +829,7 @@ void imprimeEstrutura::espera(void){
     pause = false;
 
 }
-void imprimeEstrutura::setHeapBinomial(heapBinomial* b){
+void imprimeEstrutura::setPriHeapBinomial(No_Binomial** b){
 
     Binomial = b;
 
@@ -874,6 +929,211 @@ void imprimeEstrutura::espere(int tempo){
 }
 void imprimeEstrutura::idle(void){
 
+    altura = alturaArvore();
     glutPostRedisplay();
+
+}
+void imprimeEstrutura::desenhaNoB(float *posB,int* valores, int tam){
+
+    stringstream *ss;
+    float posAux[2];
+    glPushMatrix();
+        glColor3f(0.8,0.0,0.0);
+        glBegin(GL_QUADS);
+
+            glVertex3f(posB[0]-tam/2,posB[1]-0.5,0.0);
+            glVertex3f(posB[0]+tam/2,posB[1]-0.5,0.0);
+            glVertex3f(posB[0]+tam/2,posB[1]+0.5,0.0);
+            glVertex3f(posB[0]-tam/2,posB[1]+0.5,0.0);
+
+        glEnd();
+
+    glPopMatrix();
+    posAux[0] = posB[0] - tam/2 + 0.5;
+    posAux[1] = posB[1];
+    for(int i = 1; i <= tam; i++){
+        ss = new stringstream;
+        *ss << valores[i];
+        desenhaNo(posAux,ss->str());
+        posAux[0] += 1;
+        delete ss;
+    }
+
+}
+void imprimeEstrutura::percorreB(float* posB, No_B* n, float dist){
+
+
+    desenhaLinhasB(posB, n, dist);
+    desenhaNoB(posB,n->chave,MAX);
+    percorreArvoreB(posB, n, dist);
+
+}
+void imprimeEstrutura::percorreArvoreB(float *posB, No_B* n, float dist){
+
+    float posAux[2];
+    posAux[1] = posB[1] - MAX;
+    float distX = pow(MAX+1,dist);
+    posAux[0] = posB[0] - distX/2;
+    distX /= (float)MAX;
+    for(int i = 0; n->filho[i] != NULL; i++){
+
+        desenhaNoB(posAux,n->filho[i]->chave,MAX);
+        posAux[0] += distX;
+
+    }
+    posAux[0] = posB[0] - pow(MAX+1,dist)/2;
+    for(int i = 0; n->filho[i] != NULL; i++){
+
+        percorreArvoreB(posAux, n->filho[i], dist-1);
+        posAux[0] += distX;
+
+    }
+
+}
+void imprimeEstrutura::setPriArvoreB(No_B **b){
+
+    BTREE = b;
+
+}
+int imprimeEstrutura::alturaArvoreB(No_B *b){
+
+    int alt = 0, aux;
+    for(int i = 1; b->filho[i] != NULL; i++){
+
+        aux = alturaArvoreB(b->filho[i]);
+        if(aux > alt) alt = aux;
+
+    }
+    return (alt + 1);
+}
+void imprimeEstrutura::desenhaLinhasB(float *posB, No_B* n, float dist){
+
+    float posAux[2];
+    posAux[1] = posB[1] - MAX;
+    float distX = pow(MAX+1,dist);
+    posAux[0] = posB[0] - distX/2;
+    distX /= (float)MAX;
+    for(int i = 0; n->filho[i] != NULL; i++){
+
+        desenhaLinha(posB,posAux);
+        desenhaLinhasB(posAux, n->filho[i], dist-1);
+        posAux[0] += distX;
+
+    }
+}
+void imprimeEstrutura::percorreMultiWay(float *posMW, No_MW* n, float dist){
+
+    float posAux[2];
+    float posAuxL[2];
+    float distX = pow(n->getTamAlfa(),dist);
+    posAux[0] = posMW[0] - distX/2.0;
+    distX /= (float)n->getTamAlfa();
+    posAux[0] += distX/2.0;
+    posAux[1] = posMW[1] - 3;
+    desenhaNoMW(posMW,n->getTamAlfa(),n->getChave());
+    posAuxL[0] = posMW[0] - n->getTamAlfa()/2.0;
+    posAuxL[0] += 0.5;
+    posAuxL[1] = posMW[1];
+    posAuxL[1] -= 0.25;
+    for(int i = 0; i < n->getTamAlfa(); i++){
+
+
+        if(n->getChar(97 + i) != NULL){
+
+            desenhaLinha(posAuxL,posAux);
+            percorreMultiWay(posAux,n->getChar(97 + i),dist-1);
+
+        }
+        posAux[0] += distX;
+        posAuxL[0] += 1.0;
+
+    }
+
+}
+void imprimeEstrutura::setPriArvoreMultiWay(No_MW **m){
+
+    MWTREE = m;
+
+}
+void imprimeEstrutura::desenhaNoMW(float *posMW, int tam, bool ehChave){
+
+    float dx = posMW[0] - tam/2.0;
+    char p[2];
+    float cont = 0.5;
+    if(ehChave){
+
+        glColor3f(0.0,1.0,0.0);
+
+    }else{
+
+        glColor3f(0.0,0.0,1.0);
+
+    }
+    glBegin(GL_QUADS);
+
+        glVertex3f(posMW[0]-(tam/2.0),posMW[1] - 0.5,0.0);
+        glVertex3f(posMW[0]+(tam/2.0),posMW[1] - 0.5,0.0);
+        glVertex3f(posMW[0]+(tam/2.0),posMW[1] + 0.7,0.0);
+        glVertex3f(posMW[0]-(tam/2.0),posMW[1] + 0.7,0.0);
+
+    glEnd();
+    glColor3f(0.0,0.0,0.0);
+    for(int i = 0; i <= tam; i++){
+
+        glBegin(GL_QUADS);
+
+            glVertex3f((dx + i) - 0.04, posMW[1] - 0.5, 0.0);
+            glVertex3f((dx + i) + 0.04, posMW[1] - 0.5, 0.0);
+            glVertex3f((dx + i) + 0.04, posMW[1] + 0.7, 0.0);
+            glVertex3f((dx + i) - 0.04, posMW[1] + 0.7, 0.0);
+
+        glEnd();
+
+    }
+    glBegin(GL_QUADS);
+
+        glVertex3f(posMW[0] - tam/2.0, posMW[1] - 0.04, 0.0);
+        glVertex3f(posMW[0] + tam/2.0, posMW[1] - 0.04, 0.0);
+        glVertex3f(posMW[0] + tam/2.0, posMW[1] + 0.04, 0.0);
+        glVertex3f(posMW[0] - tam/2.0, posMW[1] + 0.04, 0.0);
+
+    glEnd();
+    glBegin(GL_QUADS);
+
+        glVertex3f(posMW[0] - tam/2.0, posMW[1] + 0.62, 0.0);
+        glVertex3f(posMW[0] + tam/2.0, posMW[1] + 0.62, 0.0);
+        glVertex3f(posMW[0] + tam/2.0, posMW[1] + 0.7, 0.0);
+        glVertex3f(posMW[0] - tam/2.0, posMW[1] + 0.7, 0.0);
+
+    glEnd();
+    p[1] = '\0';
+    glColor3f(1.0,1.0,1.0);
+    for(int i = 0; i < tam; i++){
+
+        p[0] = 97 + i;
+        escreve(p,dx + cont, posMW[1] + 0.35);
+        cont += 1.0;
+
+    }
+
+}
+int imprimeEstrutura::alturaArvoreMultiWay(No_MW *n){
+
+    int alt = 0, aux;
+    for(int i = 0; i < n->getTamAlfa(); i++){
+
+        if(n->getChar(97 + i) != NULL){
+
+            aux = alturaArvoreMultiWay(n->getChar(97 + i));
+            if(aux > alt){
+
+                alt = aux;
+
+            }
+
+        }
+
+    }
+    return (alt + 1);
 
 }

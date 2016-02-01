@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="..\include\imprimeEstrutura.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1757" topLine="28" />
-		</Cursor>
-	</File>
 	<File name="heapBinomial.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3679" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\include\heapBinomial.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="521" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="..\include\NoBinomial.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="331" topLine="6" />
+			<Cursor1 position="478" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="imprimeEstrutura.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="857" topLine="32" />
+			<Cursor1 position="185" topLine="0" />
 		</Cursor>
 		<Folding>
 			<Collapse line="43" />
 			<Collapse line="62" />
 			<Collapse line="74" />
 			<Collapse line="90" />
-			<Collapse line="100" />
 			<Collapse line="123" />
 			<Collapse line="132" />
 			<Collapse line="256" />
@@ -71,9 +61,19 @@
 			<Collapse line="874" />
 		</Folding>
 	</File>
-	<File name="..\include\heapBinomial.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="478" topLine="0" />
+			<Cursor1 position="521" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="..\include\NoBinomial.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="331" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="..\include\imprimeEstrutura.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1757" topLine="28" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
