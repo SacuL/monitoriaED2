@@ -1,0 +1,401 @@
+# depslib dependency file v1.0
+1447192770 source:c:\users\okty\desktop\representacao de arvore\src\01_quad.cpp
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\glut.h
+	"freeglut_std.h"
+
+1368326960 std.h"
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1448718917 
+
+1447173584 c:\users\okty\desktop\representacao de arvore\include\no.h
+	<stdlib.h>
+
+1447194574 source:c:\users\okty\desktop\representacao de arvore\src\heapesq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1447194556 c:\users\okty\desktop\representacao de arvore\include\heapesq.h
+	"No.h"
+
+1447202532 source:c:\users\okty\desktop\representacao de arvore\src\imprimearvore.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeArvore.h>
+
+1447202532 vore.h>
+
+1447201746 source:c:\users\okty\desktop\representacao de arvore\src\main.cpp
+	<iostream>
+	<imprimeArvore.h>
+	<heapEsq.h>
+
+1447201746 >
+
+1447198181 c:\users\okty\desktop\representacao de arvore\include\imprimearvore.h
+	"No.h"
+
+1447757887 source:c:\users\okty\desktop\heapcontopengl2\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1447765086 trutura.h>
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447180784 c:\users\okty\desktop\heapcontopengl2\include\no.h
+	<stdlib.h>
+
+1447690270 c:\users\okty\desktop\heapcontopengl2\include\imprimeestrutura.h
+	"No.h"
+
+1447759014 source:c:\users\okty\desktop\heapcontopengl2\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl2\include\heapcont.h
+
+1447759208 source:c:\users\okty\desktop\heapcontopengl2\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapCont.h>
+	<time.h>
+
+1447759936 source:c:\users\okty\desktop\heapcontopengl3\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl3\include\heapcont.h
+
+1447765086 source:c:\users\okty\desktop\heapcontopengl3\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1368326960 c:\users\okty\desktop\heapcontopengl3\include\gl\glut.h
+	"freeglut_std.h"
+
+1368326960 c:\users\okty\desktop\heapcontopengl3\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447187984 c:\users\okty\desktop\heapcontopengl3\include\no.h
+	<stdlib.h>
+
+1447697470 c:\users\okty\desktop\heapcontopengl3\include\imprimeestrutura.h
+	"No.h"
+
+1448718917 source:c:\users\okty\desktop\heapcontopengl3\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapEsq.h>
+	<time.h>
+
+1448721930 source:c:\users\okty\desktop\heapcontopengl3\src\heapesq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1448718871 c:\users\okty\desktop\heapcontopengl3\include\heapesq.h
+	"No.h"
+
+1447761486 source:/home/batman/Área de Trabalho/Heap Esquerdista/src/imprimeEstrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1368323360 /home/batman/Área de Trabalho/Heap Esquerdista/include/GL/glut.h
+	"freeglut_std.h"
+
+1368323360 /home/batman/Área de Trabalho/Heap Esquerdista/include/GL/freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447191584 /home/batman/Área de Trabalho/Heap Esquerdista/include/No.h
+	<stdlib.h>
+
+1449065506 /home/batman/Área de Trabalho/Heap Esquerdista/include/imprimeEstrutura.h
+	"No.h"
+	<Lista.h>
+
+1449064126 source:/home/batman/Área de Trabalho/Heap Esquerdista/src/main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapEsq.h>
+	<time.h>
+
+1449064361 /home/batman/Área de Trabalho/Heap Esquerdista/include/heapEsq.h
+	"No.h"
+
+1449064903 source:/home/batman/Área de Trabalho/Heap Esquerdista/src/heapEsq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1448553936 source:/home/batman/Área de Trabalho/Heap Esquerdista/src/Lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1448553813 /home/batman/Área de Trabalho/Heap Esquerdista/include/Lista.h
+	"No_Lista.h"
+
+1448553974 /home/batman/Área de Trabalho/Heap Esquerdista/include/No_Lista.h
+	<stdlib.h>
+	<string>
+
+1449518334 source:c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\src\heapesq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\heapesq.h
+	"No.h"
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\no.h
+	<stdlib.h>
+
+1449518064 source:c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\gl\glut.h
+	"freeglut_std.h"
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1449521136 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\imprimeestrutura.h
+	"No.h"
+	<Lista.h>
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\lista.h
+	"No_Lista.h"
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1449517880 source:c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1449517880 source:c:\users\lucas\cworkplace\tutoria ed2\heap esquerdista\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapEsq.h>
+	<time.h>
+
+1449690906 source:c:\users\lucas\cworkplace\tutoria ed2\heap binomial\src\heapbinomial.cpp
+	"heapBinomial.h"
+	<stdlib.h>
+	<iostream>
+
+1449691828 c:\users\lucas\cworkplace\tutoria ed2\heap binomial\include\heapbinomial.h
+	"No.h"
+
+1449691137 c:\users\lucas\cworkplace\tutoria ed2\heap binomial\include\no.h
+	<stdlib.h>
+
+1449517880 source:c:\users\lucas\cworkplace\tutoria ed2\heap binomial\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap binomial\include\lista.h
+	"No_Lista.h"
+
+1449517883 c:\users\lucas\cworkplace\tutoria ed2\heap binomial\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1449691039 source:c:\users\lucas\cworkplace\tutoria ed2\heap binomial\src\main.cpp
+	<iostream>
+	<heapBinomial.h>
+	<time.h>
+
+1449693934 source:c:\users\okty\desktop\heap binomial\src\heapbinomial.cpp
+	"heapBinomial.h"
+	<stdlib.h>
+	<iostream>
+
+1449696160 c:\users\okty\desktop\heap binomial\include\heapbinomial.h
+	"NoBinomial.h"
+
+1447202384 c:\users\okty\desktop\heap binomial\include\no.h
+	<stdlib.h>
+
+1449932931 source:c:\users\okty\desktop\heap binomial\src\main.cpp
+	<iostream>
+	<heapBinomial.h>
+	<time.h>
+	<imprimeEstrutura.h>
+
+1449693745 c:\users\okty\desktop\heap binomial\include\nobinomial.h
+	<stdlib.h>
+
+1449933514 source:c:\users\okty\desktop\heap binomial\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+
+1449517883 c:\users\okty\desktop\heap binomial\include\gl\glut.h
+	"freeglut_std.h"
+
+1449519820 c:\users\okty\desktop\heap binomial\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1449930537 c:\users\okty\desktop\heap binomial\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1448564612 c:\users\okty\desktop\heap binomial\include\lista.h
+	"No_Lista.h"
+
+1448564774 c:\users\okty\desktop\heap binomial\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1448564736 source:c:\users\okty\desktop\heap binomial\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1449693934 source:c:\users\okty\desktop\heap binomial thread\src\heapbinomial.cpp
+	"heapBinomial.h"
+	<stdlib.h>
+	<iostream>
+
+1449696160 c:\users\okty\desktop\heap binomial thread\include\heapbinomial.h
+	"NoBinomial.h"
+
+1449693745 c:\users\okty\desktop\heap binomial thread\include\nobinomial.h
+	<stdlib.h>
+
+1450269361 source:c:\users\okty\desktop\heap binomial thread\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1449517883 c:\users\okty\desktop\heap binomial thread\include\gl\glut.h
+	"freeglut_std.h"
+
+1449519820 c:\users\okty\desktop\heap binomial thread\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447202384 c:\users\okty\desktop\heap binomial thread\include\no.h
+	<stdlib.h>
+
+1450268063 c:\users\okty\desktop\heap binomial thread\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<heapBinomial.h>
+
+1448564612 c:\users\okty\desktop\heap binomial thread\include\lista.h
+	"No_Lista.h"
+
+1448564774 c:\users\okty\desktop\heap binomial thread\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1448564736 source:c:\users\okty\desktop\heap binomial thread\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1450268646 source:c:\users\okty\desktop\heap binomial thread\src\main.cpp
+	<iostream>
+	<heapBinomial.h>
+	<time.h>
+	<imprimeEstrutura.h>
+	<thread>
+

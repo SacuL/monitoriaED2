@@ -1,0 +1,160 @@
+# depslib dependency file v1.0
+1447192770 source:c:\users\okty\desktop\representacao de arvore\src\01_quad.cpp
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\glut.h
+	"freeglut_std.h"
+
+1368305360 c:\users\okty\desktop\representacao de arvore\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447173584 c:\users\okty\desktop\representacao de arvore\include\no.h
+	<stdlib.h>
+
+1447194574 source:c:\users\okty\desktop\representacao de arvore\src\heapesq.cpp
+	"heapEsq.h"
+	<stdlib.h>
+	<iostream>
+
+1447194556 c:\users\okty\desktop\representacao de arvore\include\heapesq.h
+	"No.h"
+
+1447202532 source:c:\users\okty\desktop\representacao de arvore\src\imprimearvore.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeArvore.h>
+
+1447201746 source:c:\users\okty\desktop\representacao de arvore\src\main.cpp
+	<iostream>
+	<imprimeArvore.h>
+	<heapEsq.h>
+
+1447198181 c:\users\okty\desktop\representacao de arvore\include\imprimearvore.h
+	"No.h"
+
+1447757887 source:c:\users\okty\desktop\heapcontopengl2\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl2\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447180784 c:\users\okty\desktop\heapcontopengl2\include\no.h
+	<stdlib.h>
+
+1447690270 c:\users\okty\desktop\heapcontopengl2\include\imprimeestrutura.h
+	"No.h"
+
+1447759014 source:c:\users\okty\desktop\heapcontopengl2\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl2\include\heapcont.h
+
+1447759208 source:c:\users\okty\desktop\heapcontopengl2\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapCont.h>
+	<time.h>
+
+1447759936 source:c:\users\okty\desktop\heapcontopengl3\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1447758887 c:\users\okty\desktop\heapcontopengl3\include\heapcont.h
+
+1447757887 source:c:\users\okty\desktop\heapcontopengl3\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1368316160 c:\users\okty\desktop\heapcontopengl3\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\heapcontopengl3\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447180784 c:\users\okty\desktop\heapcontopengl3\include\no.h
+	<stdlib.h>
+
+1447690270 c:\users\okty\desktop\heapcontopengl3\include\imprimeestrutura.h
+	"No.h"
+
+1447759208 source:c:\users\okty\desktop\heapcontopengl3\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapCont.h>
+	<time.h>
+
+1452877106 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1452877110 c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\include\heapcont.h
+
+1453075086 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<math.h>
+	<iostream>
+	<sstream>
+	"No.h"
+	<imprimeEstrutura.h>
+
+1452877110 c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\include\gl\glut.h
+	"freeglut_std.h"
+
+1452877110 c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1452877110 c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\include\no.h
+	<stdlib.h>
+
+1452877110 c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\include\imprimeestrutura.h
+	"No.h"
+
+1452877106 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\heap binario contiguo\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<heapCont.h>
+	<time.h>
+
