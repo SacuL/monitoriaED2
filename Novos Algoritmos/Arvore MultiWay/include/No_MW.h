@@ -11,10 +11,12 @@ class No_MW
 
             chave = false;
             chars = new No_MW*[tamAlfabeto];
-            for(int i = 0 ; i < tamAlfabeto ; i ++){
-                chars[i] = NULL;
-            }
             tamAlfa = tamAlfabeto;
+            for(int i = 0; i < tamAlfabeto; i++){
+
+                chars[i] = NULL;
+
+            }
         }
         bool getChave(){return chave;}
         void setChave(bool c){chave = c;}
@@ -41,7 +43,7 @@ class No_MW
 
             for(int i = 0; i < tamAlfa; i++){
 
-                if(chars[i] == NULL){
+                if(chars[i] != NULL){
 
                     return false;
 
@@ -64,6 +66,11 @@ class No_MW
 
             }
             delete []chars;
+
+        }
+        void setChar(char c, No_MW* n){
+
+            chars[c - 97] = n;
 
         }
     private:

@@ -47,6 +47,7 @@ int main()
     trie->insere((char*)s11.c_str(),s11.size());
     imp->espere(2);
     trie->insere((char*)s12.c_str(),s12.size());
+    imp->espere(2);
     trie->imprime();
     cout << "Pesquisando " << s3 << endl;
     if(trie->busca((char*)s3.c_str(), s3.size())){
@@ -58,6 +59,11 @@ int main()
         cout << "String nao existe" << endl;
 
     }
+    trie->remove((char*)s1.c_str(),s1.size());
+    cout << "Deletou " << s1 << endl;
+    trie->remove((char*)s12.c_str(),s12.size());
+    cout << "Deletou " << s12 << endl;
+    cout << "Altura da arvore " << trie->alturaMW() <<endl;
     imp->finalizaImpressao();
     delete trie;
     delete imp;
