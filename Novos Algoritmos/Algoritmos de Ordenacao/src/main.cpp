@@ -1,8 +1,15 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <imprimeEstrutura.h>
 
 using namespace std;
+
+imprimeEstrutura *imp = new imprimeEstrutura(VETOR);
+
+float velocidade = 1000.0;
+
+
 void randomizaVetor(int* vet, int tam)
 {
 
@@ -59,17 +66,26 @@ void bubbleSort(int* vetor, int tam)
         {
             if(vetor[j+1] < vetor[j])
             {
-
+                imp->setNosColorir(j,j+1,j,j+1);
+                imp->espereMilis(velocidade);
                 float aux = vetor[j];
                 vetor[j] = vetor[j+1];
                 vetor[j+1]= aux;
                 trocou = 1;
-
+                imp->espereMilis(velocidade);
+            }else{
+                imp->setNosColorir(j,j+1,-1,-1);
+                imp->espereMilis(velocidade);
             }
 
         }
-        if (trocou == 0) break;
+        if (trocou == 0){
+            break;
+        }else{
+            trocou = 0;
+        }
     }
+    imp->setNosColorir(-1,-1,-1,-1);
 }
 
 void insertionSort(int* vetor, int tam)
@@ -80,18 +96,25 @@ void insertionSort(int* vetor, int tam)
     for(i = 1; i < tam; i++)
     {
         j = i;
-
+        imp->setNosColorir(j,j-1,-1,-1);
         while(vetor[j] < vetor[j - 1])
         {
+            imp->setNosColorir(-1,-1,j,j-1);
+            imp->espereMilis(velocidade);
+
             aux = vetor[j];
             vetor[j] = vetor[j - 1];
             vetor[j - 1] = aux;
 
             j--;
+            imp->espereMilis(velocidade);
 
             if(j == 0)break;
         }
+        imp->setNosColorir(j,j-1,-1,-1);
+        imp->espereMilis(velocidade);
     }
+    imp->setNosColorir(-1,-1,-1,-1);
 }
 
 void selectionSort(int* vetor, int tam)
@@ -103,21 +126,30 @@ void selectionSort(int* vetor, int tam)
         min = i;
         for (j = (i+1); j < tam; j++)
         {
-
+            imp->setNosColorir(min,j,-1,-1);
             if(vetor[j] < vetor[min])
             {
+                imp->setNosColorir(-1,-1,min,j);
+                imp->espereMilis(velocidade);
                 min = j;
+                imp->setNosColorir(-1,-1,min,-1);
             }
+            imp->espereMilis(velocidade);
+
         }
 
         if (i != min)
         {
+            imp->setNosColorir(-1,-1,i,min);
+            imp->espereMilis(velocidade);
             float swap = vetor[i];
             vetor[i] = vetor[min];
             vetor[min] = swap;
-
+            imp->setNosColorir(-1,-1,i,min);
+            imp->espereMilis(velocidade);
         }
     }
+    imp->setNosColorir(-1,-1,-1,-1);
 }
 
 
@@ -277,7 +309,7 @@ void menu (int* vet, int tam)
 
     int escolha;
     int* vetAux;
-    cout <<endl<<endl<<endl;
+    cout <<endl;
     cout<< "Escolha o metodo de ordenacao para este vetor: "<<endl;
     cout<< "1 - heapSort;" <<endl<<
         "2 - mergeSort" <<endl<<
@@ -286,6 +318,7 @@ void menu (int* vet, int tam)
         "5 - selectionSort" <<endl<<
         "6 - bubbleSort" <<endl << ">> ";
     cin >> escolha;
+    imp->imprime((char*)"Vetor");
     switch(escolha)
     {
 
@@ -311,22 +344,35 @@ void menu (int* vet, int tam)
         break;
     }
     verificaOrdenado(vet,tam);
-
 }
+
 int main()
 {
+
     srand(time(NULL));
     int tam;
     int* vet;
-    cout << "Digite o tamanho do vetor " << endl;
+    cout << "Digite o tamanho do vetor\n>>";
     cin >> tam;
     vet = new int[tam];
     randomizaVetor(vet, tam);
+    imp->setPriVetor(vet, tam);
+    cout << "Vetor gerado: ";
     imprimeVetor(vet,tam);
+    cout << "\n\nSelecione a velocidade da animacao: \n\t4 = lento, \n\t3 = normal, \n\t2 = rapido, \n\t1 = muito rapido\n\t>>";
+    int temp = 0;
+    cin >> temp;
+    if(temp == 4){
+        velocidade = 2000.0;
+    }else if (temp == 2){
+        velocidade = 500.0;
+    }
+    else if (temp == 1){
+        velocidade = 250.0;
+    }
     menu(vet, tam);
-    cout<<endl<<endl;
-    imprimeVetor(vet,tam);
-    cout<<endl;
+    int p;
+    cin >> p;
     delete []vet;
     return 0;
 }
