@@ -268,41 +268,54 @@ void quickSort(int x[],int first,int last)
     if(first<last)
     {
         pivot=first;
+        imp->setPivo(pivot);
         i=first;
         j=last;
 
         while(i<j)
         {
+
             while(x[i]<=x[pivot]&&i<last)
             {
-
+                imp->setNosColorir(i,pivot,-1,-1);
+                imp->espereMilis(velocidade);
                 i++;
-
             }
+            imp->setNosColorir(-1,-1,i,pivot);
+            imp->espereMilis(velocidade);
             while(x[j]>x[pivot])
             {
-
+                imp->setNosColorir(j,pivot,-1,-1);
+                imp->espereMilis(velocidade);
                 j--;
-
             }
+            imp->setNosColorir(-1,-1,j,pivot);
+            imp->espereMilis(velocidade);
 
 
             if(i<j)
             {
-
+                imp->setNosColorir(-1,-1,i,j);
+                imp->espereMilis(velocidade);
                 temp=x[i];
                 x[i]=x[j];
                 x[j]=temp;
-
+                imp->setNosColorir(-1,-1,i,j);
+                imp->espereMilis(velocidade);
             }
         }
+        imp->setNosColorir(-1,-1,pivot,j);
+        imp->espereMilis(velocidade);
         temp=x[pivot];
         x[pivot]=x[j];
         x[j]=temp;
+        imp->setNosColorir(-1,-1,pivot,j);
+        imp->espereMilis(velocidade);
         quickSort(x,first,j-1);
         quickSort(x,j+1,last);
 
     }
+    imp->setNosColorir(-1,-1,-1,-1);
 }
 void menu (int* vet, int tam)
 {

@@ -602,7 +602,7 @@
 	<imprimeEstrutura.h>
 	<time.h>
 
-1458411290 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\src\imprimeestrutura.cpp
+1458758535 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\src\imprimeestrutura.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<string>
@@ -628,7 +628,7 @@
 1457714725 c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\include\no.h
 	<stdlib.h>
 
-1458411124 c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\include\imprimeestrutura.h
+1458758211 c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\include\imprimeestrutura.h
 	<No.h>
 	<Lista.h>
 	<NoBinomial.h>
@@ -664,7 +664,7 @@
 	<cstring>
 	<iostream>
 
-1458412915 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\src\main.cpp
+1458758441 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\algoritmos de ordenacao\src\main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>

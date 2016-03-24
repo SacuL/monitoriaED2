@@ -1,0 +1,287 @@
+# depslib dependency file v1.0
+1450271960 source:c:\users\okty\desktop\imprime estrutura\heapcont thread\src\heapcont.cpp
+	"heapCont.h"
+	<iostream>
+
+1450275592 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\heapcont.h
+
+1450275728 source:c:\users\okty\desktop\imprime estrutura\heapcont thread\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1368316160 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447202384 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\no.h
+	<stdlib.h>
+
+1450275538 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1448564612 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\lista.h
+	"No_Lista.h"
+
+1448564774 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1449693745 c:\users\okty\desktop\imprime estrutura\heapcont thread\include\nobinomial.h
+	<stdlib.h>
+
+1448564736 source:c:\users\okty\desktop\imprime estrutura\heapcont thread\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1451918645 source:c:\users\okty\desktop\imprime estrutura\arvoreavl\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1368316160 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\gl\glut.h
+	"freeglut_std.h"
+
+1368316160 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1447202384 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\no.h
+	<stdlib.h>
+
+1451916993 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1448564612 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\lista.h
+	"No_Lista.h"
+
+1448564774 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1449693745 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\nobinomial.h
+	<stdlib.h>
+
+1448564736 source:c:\users\okty\desktop\imprime estrutura\arvoreavl\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1451918454 source:c:\users\okty\desktop\imprime estrutura\arvoreavl\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<AVL.h>
+
+1451919270 source:c:\users\okty\desktop\imprime estrutura\arvoreavl\src\avl.cpp
+	"AVL.h"
+
+1451916191 c:\users\okty\desktop\imprime estrutura\arvoreavl\include\avl.h
+	<No.h>
+
+1452877101 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\src\avl.cpp
+	"AVL.h"
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\avl.h
+	<No.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\no.h
+	<stdlib.h>
+
+1453921827 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\gl\glut.h
+	"freeglut_std.h"
+
+1452877097 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\lista.h
+	"No_Lista.h"
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\include\nobinomial.h
+	<stdlib.h>
+
+1452877101 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1452877940 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\햞vore avl\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<AVL.h>
+
+1452877101 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\src\avl.cpp
+	"AVL.h"
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\avl.h
+	<No.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\no.h
+	<stdlib.h>
+
+1453921827 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\gl\glut.h
+	"freeglut_std.h"
+
+1452877097 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\lista.h
+	"No_Lista.h"
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1452877096 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\include\nobinomial.h
+	<stdlib.h>
+
+1452877101 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1452877940 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore avl\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<AVL.h>
+
+1458852776 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
+	"ArvoreVermelhoPreta.h"
+	<iostream>
+
+1458853178 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
+	<No.h>
+
+1458843711 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no.h
+	<stdlib.h>
+
+1452873501 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\lista.h
+	"No_Lista.h"
+
+1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1458845347 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<ArvoreVermelhoPreta.h>
+
+1458844316 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+
+1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\nobinomial.h
+	<stdlib.h>
+
+1458852834 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\glut.h
+	"freeglut_std.h"
+
+1452873497 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
