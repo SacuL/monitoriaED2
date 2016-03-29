@@ -40,7 +40,7 @@ void verificaOrdenado(int *vet, int tam)
     for(int i = 0; i < tam - 1; i++)
     {
 
-        if(vet[tam] > vet[tam])
+        if(vet[i] > vet[i+1])
         {
 
             cout<<endl<<endl<<"Erro: vetor nao esta ordenado!"<<endl;
@@ -187,79 +187,48 @@ void mergeSort(int begin, int end, int* vet, int* vetAux)
     for(i = begin; i <= end; i++)
         vet[i] = vetAux[i];
 }
+
+void makeHeap(int *arr, int c)
+{
+    for ( int i = 1 ; i < c ; i++ )
+    {
+        int val = arr[i] ;
+        int s = i ;
+        int f = ( s - 1 ) / 2 ;
+        while ( s > 0 && arr[f] < val )
+        {
+            imp->setNosColorir(i,-1,s,f);
+            imp->espereMilis(velocidade);
+            arr[s] = arr[f] ;
+            imp->espereMilis(velocidade);
+            s = f ;
+            f = ( s - 1 ) / 2 ;
+        }
+        imp->setNosColorir(i,-1,s,-1);
+        imp->espereMilis(velocidade);
+        arr[s] = val ;
+        imp->espereMilis(velocidade);
+    }
+}
+
+
 void heapSort(int* vet, int tam)
 {
+    makeHeap(vet, tam);
 
-    int aux;
-    for(int i=tam-1; i>=0; i--)
+    for ( int i = tam - 1 ; i > 0 ; i-- )
     {
-
-        for(int k=(i/2)-1; k>=0; k--)
-        {
-
-            if(2*k+2<=i)
-            {
-
-                if(vet[2*k+2]>vet[2*k+1])
-                {
-
-                    if(vet[2*k+2]>vet[k])
-                    {
-
-                        aux=vet[k];
-                        vet[k]=vet[2*k+2];
-                        vet[2*k+2]=aux;
-
-                    }
-
-
-                }
-                else
-                {
-
-                    if(vet[2*k+1]>vet[k])
-                    {
-
-                        aux=vet[k];
-                        vet[k]=vet[2*k+1];
-                        vet[2*k+1]=aux;
-
-                    }
-
-                }
-
-            }
-            else
-            {
-
-                if(vet[2*k+1]>vet[k])
-                {
-
-                    aux=vet[k];
-                    vet[k]=vet[2*k+1];
-                    vet[2*k+1]=aux;
-
-                }
-
-
-            }
-            aux=vet[0];
-            vet[0]=vet[i];
-            vet[i]=aux;
-
-        }
-
+        imp->setNosColorir(-1,-1,i,0);
+        imp->espereMilis(velocidade);
+        int ivalue = vet[i] ;
+        vet[i] = vet[0] ;
+        vet[0]=ivalue;
+        imp->espereMilis(velocidade);
+        makeHeap(vet, i);
     }
-    if(vet[0]>vet[1])
-    {
-
-        aux=vet[0];
-        vet[0]=vet[1];
-        vet[1]=aux;
-
-    }
-
 }
+
+
 void quickSort(int x[],int first,int last)
 {
 
