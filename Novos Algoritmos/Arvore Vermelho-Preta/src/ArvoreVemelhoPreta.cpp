@@ -20,50 +20,85 @@ void ArvoreVermelhoPreta::deletaH(No* p){
 }
 
 
-void ArvoreVermelhoPreta::rotacaoEsquerda(No* no){
-    No* temp = no->getProx();
-    if(no->getPai() != NULL){
-        if(no->getPai()->getProx() == no){
-            no->getPai()->setProx(temp);
-        }
-        if(no->getPai()->getAnt() == no){
-            no->getPai()->setAnt(temp);
-        }
-        temp->setPai(no->getPai());
+void ArvoreVermelhoPreta::rotacaoEsquerda(No* x){
+    No* y = x->getProx();
+    x->setProx(y->getAnt());
+    if(y->getAnt() != NULL){
+        y->getAnt()->setPai(x);
+    }
+    y->setPai(x->getPai());
+    if(x->getPai() == NULL){
+        raiz = y;
     }else{
-        raiz = temp;
-        raiz->setPai(NULL);
+        if(x == x->getPai()->getAnt()){
+            x->getPai()->setAnt(y);
+        }else{
+            x->getPai()->setProx(y);
+        }
     }
-    no->setProx(temp->getAnt());
-    temp->setAnt(no);
-    no->setPai(temp);
-    if(no->getProx() != NULL){
-        no->getProx()->setPai(no);
-    }
+    y->setAnt(x);
+    x->setPai(y);
+
+//    No* temp = no->getProx();
+//    if(no->getPai() != NULL){
+//        if(no->getPai()->getProx() == no){
+//            no->getPai()->setProx(temp);
+//        }
+//        if(no->getPai()->getAnt() == no){
+//            no->getPai()->setAnt(temp);
+//        }
+//        temp->setPai(no->getPai());
+//    }else{
+//        raiz = temp;
+//        raiz->setPai(NULL);
+//    }
+//    no->setProx(temp->getAnt());
+//    temp->setAnt(no);
+//    no->setPai(temp);
+//    if(no->getProx() != NULL){
+//        no->getProx()->setPai(no);
+//    }
 }
 
-void ArvoreVermelhoPreta::rotacaoDireita(No* no){
-    No* temp = no->getAnt();
-    if(no->getPai() != NULL){
-        if(no->getPai()->getProx() == no){
-            no->getPai()->setProx(temp);
-        }
-        if(no->getPai()->getAnt() == no){
-            no->getPai()->setAnt(temp);
-        }
-        temp->setPai(no->getPai());
+void ArvoreVermelhoPreta::rotacaoDireita(No* x){
+    No* y = x->getAnt();
+    x->setAnt(y->getProx());
+    if(y->getProx() != NULL){
+        y->getProx()->setPai(x);
+    }
+    y->setPai(x->getPai());
+    if(x->getPai() == NULL){
+        raiz = y;
     }else{
-        raiz = temp;
-        raiz->setPai(NULL);
+        if(x == x->getPai()->getProx()){
+            x->getPai()->setProx(y);
+        }else{
+            x->getPai()->setAnt(y);
+        }
     }
-    no->setAnt(temp->getProx());
-    temp->setProx(no);
-    no->setPai(temp);
-    if(no->getAnt() != NULL){
-        no->getAnt()->setPai(no);
-    }
-}
+    y->setProx(x);
+    x->setPai(y);
 
+//    No* temp = no->getAnt();
+//    if(no->getPai() != NULL){
+//        if(no->getPai()->getProx() == no){
+//            no->getPai()->setProx(temp);
+//        }
+//        if(no->getPai()->getAnt() == no){
+//            no->getPai()->setAnt(temp);
+//        }
+//        temp->setPai(no->getPai());
+//    }else{
+//        raiz = temp;
+//        raiz->setPai(NULL);
+//    }
+//    no->setAnt(temp->getProx());
+//    temp->setProx(no);
+//    no->setPai(temp);
+//    if(no->getAnt() != NULL){
+//        no->getAnt()->setPai(no);
+//    }
+}
 
 void ArvoreVermelhoPreta::corrigeCaso1(No* no){
     // Caso 1: Se o NO eh raiz, ele deve ser PRETO
@@ -158,9 +193,229 @@ void ArvoreVermelhoPreta::insereAVP(No* no, No* pai, int valor){
 void ArvoreVermelhoPreta::insere(int valor){
     insereAVP(raiz,NULL,valor);
 }
-void ArvoreVermelhoPreta::remover(int p){
 
+
+No* ArvoreVermelhoPreta::getSucessor(No* no){
+    No* aux = no->getProx();
+    while(aux->getAnt() != NULL){
+        aux = aux->getAnt();
+    }
+    return aux;
 }
+
+void ArvoreVermelhoPreta::remover(int valor){
+    if(raiz == NULL){
+        return;
+    }
+    No* p = raiz;
+    No* y = NULL;
+    No* q = NULL;
+    int achou = 0;
+    while( p!= NULL && achou == 0 ){
+        if(p->getValor() == valor){
+            achou = 1;
+        }
+        if(achou == 0){
+            if(p->getValor() < valor){
+                p = p->getProx();
+            }else{
+                p = p->getAnt();
+            }
+        }
+    }
+    if(achou == 0){
+        // nao encontrou o valor
+        return;
+    }else{
+        std::cout<<"oskey1"<<endl;
+        if(p->getAnt() == NULL || p->getProx() == NULL){
+            y = p;
+        }else{
+            y = getSucessor(p);
+        }
+
+        if(y->getAnt() != NULL){
+
+            q = y->getAnt();
+        }else{
+
+            q = y->getProx();
+//            if(y->getProx() != NULL){
+//                q = y->getProx();
+//            }else{
+//                q = NULL;
+//            }
+        }std::cout<<"oskey3"<<endl;
+        if(q!= NULL){
+            q->setPai(y->getPai());
+        }
+        std::cout<<"oskey4"<<endl;
+
+
+
+        if(y->getPai() == NULL){
+            raiz = q;
+        }else{
+            if( y == y->getPai()->getAnt()){
+                y->getPai()->setAnt(q);
+            }else{
+                y->getPai()->setProx(q);
+            }
+        }
+        if( y != p){
+            p->setValor(y->getValor());
+        }
+        if(y->getCor() == PRETO){
+            corrigeRemocao(q);
+        }
+
+
+//        if( y != p ){
+//            p->setCor(y->getCor());
+//            p->setValor(y->getValor());
+//        }
+//        if(y->getCor() == PRETO){
+//            corrigeRemocao(q);
+//        }
+    }
+    std::cout << "DELETOU " << valor << endl;
+}
+
+void ArvoreVermelhoPreta::corrigeRemocao(No* x){
+    if(x == NULL){
+        return;
+    }
+
+    std::cout<<"corrigindo "<<x->getValor()<<endl;
+
+    No* w;
+
+    while( x != raiz && x->getCor() == PRETO){
+        if (x == x->getPai()->getAnt()) {
+            std::cout<<"ok1"<<endl;
+            w = x->getPai()->getProx();
+            if (w->getCor() == VERMELHO) { //CASO 1
+                w->setCor(PRETO);
+                x->getPai()->setCor(VERMELHO);
+                rotacaoEsquerda(x->getPai());
+//                raiz = left_rotate(raiz, x->getPai());
+                w = x->getPai()->getProx();
+            }
+            //CASO 2
+            if (w->getAnt()->getCor() == PRETO && w->getProx()->getCor() == PRETO) {
+                w->setCor(VERMELHO);
+                x = x->getPai();
+            } else {
+                if (w->getProx()->getCor() == PRETO) { //CASO 3
+                    w->getAnt()->setCor(PRETO);
+                    w->setCor(VERMELHO);
+                    rotacaoDireita(w);
+//                    raiz = right_rotate(raiz, w);
+                    w = x->getPai()->getProx();
+                }
+                //CASO 4
+                w->setCor(x->getPai()->getCor());
+                x->getPai()->setCor(PRETO);
+                w->getProx()->setCor(PRETO);
+                rotacaoEsquerda(x->getPai());
+//                raiz = left_rotate(raiz, x->getPai());
+                x = raiz;
+            }
+        } else {
+            std::cout<<"ok2"<<endl;
+            w = x->getPai()->getAnt();
+            if (w->getCor() == VERMELHO) {
+                w->setCor(PRETO);
+                x->getPai()->setCor(VERMELHO);
+                rotacaoDireita(x->getPai());
+//                raiz = right_rotate(raiz, x->getPai());
+                w = x->getPai()->getAnt();
+            }
+            if (w->getProx()->getCor() == PRETO && w->getAnt()->getCor() == PRETO) {
+                w->setCor(VERMELHO);
+                x = x->getPai();
+            } else {
+                if (w->getAnt()->getCor() == PRETO) {
+                    w->getProx()->setCor(PRETO);
+                    w->setCor(VERMELHO);
+                    rotacaoEsquerda(w);
+//                    raiz = left_rotate(raiz, w);
+                    w = x->getPai()->getAnt();
+                }
+                w->setCor(x->getPai()->getCor());
+                x->getPai()->setCor(PRETO);
+                w->getAnt()->setCor(PRETO);
+                rotacaoDireita(x->getPai());
+//                raiz = right_rotate(raiz, x->getPai());
+                x = raiz;
+            }
+        }
+    }
+    x->setCor(PRETO);
+
+//    if(p == NULL){
+//        return;
+//    }
+//
+//    No* s;
+//    while (p!= raiz && p->getCor() == PRETO){
+//        if(p->getPai()->getAnt() == p){
+//            s = p->getPai()->getProx();
+//            if(s->getCor() == VERMELHO){
+//                s->setCor(PRETO);
+//                p->getPai()->setCor(VERMELHO);
+//                rotacaoEsquerda(p->getPai());
+//                s = p->getPai()->getProx();
+//            }
+//            if(s->getProx()->getCor() == PRETO && s->getAnt()->getCor() == PRETO){
+//                s->setCor(VERMELHO);
+//                p = p->getPai();
+//            }else{
+//                if(s->getAnt()->getCor()==PRETO){
+//                    s->getAnt()->setCor(PRETO);
+//                    s->setCor(VERMELHO);
+//                    rotacaoDireita(s);
+//                    s = p->getPai()->getProx();
+//                }
+//                s->setCor(p->getPai()->getCor());
+//                p->getPai()->setCor(PRETO);
+//                s->getProx()->setCor(PRETO);
+//                rotacaoEsquerda(p->getPai());
+//                p = raiz;
+//            }
+//        }else{
+//            s = p->getPai()->getAnt();
+//            if(s->getCor() == VERMELHO){
+//                s->setCor(PRETO);
+//                p->getPai()->setCor(VERMELHO);
+//                rotacaoDireita(p->getPai());
+//                s = p->getPai()->getAnt();
+//            }
+//            if(s->getAnt()->getCor() == PRETO && s->getProx()->getCor() == PRETO){
+//                s->setCor(VERMELHO);
+//                p = p->getPai();
+//            }else{
+//                if(s->getAnt()->getCor() == PRETO){
+//                    s->getProx()->setCor(PRETO);
+//                    s->setCor(VERMELHO);
+//                    rotacaoEsquerda(s);
+//                    s = p->getPai()->getAnt();
+//                }
+//                s->setCor(p->getPai()->getCor());
+//                p->getPai()->setCor(PRETO);
+//                s->getAnt()->setCor(PRETO);
+//                rotacaoDireita(p->getPai());
+//                p = raiz;
+//            }
+//        }
+//
+//        p->setCor(PRETO);
+//        raiz->setCor(PRETO);
+//
+//    }
+}
+
+
 No** ArvoreVermelhoPreta::getRaiz(){
 
     return &raiz;

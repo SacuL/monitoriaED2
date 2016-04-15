@@ -226,11 +226,11 @@
 	<imprimeEstrutura.h>
 	<AVL.h>
 
-1458852776 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
+1460751941 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
 	"ArvoreVermelhoPreta.h"
 	<iostream>
 
-1458853178 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
+1460743712 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
 	<No.h>
 
 1458843711 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no.h
@@ -249,7 +249,7 @@
 	<stdlib.h>
 	<string>
 
-1458845347 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\main.cpp
+1460752345 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\main.cpp
 	<iostream>
 	<imprimeEstrutura.h>
 	<ArvoreVermelhoPreta.h>

@@ -23,6 +23,8 @@ class ArvoreVermelhoPreta
         void corrigeCaso5(No* no);
         void rotacaoEsquerda(No* no);
         void rotacaoDireita(No* no);
+        void corrigeRemocao(No* no);
+        No* getSucessor(No* no);
 
 };
 

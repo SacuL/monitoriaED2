@@ -13,27 +13,35 @@ int main()
     imp->setPriNoBinario(avp->getRaiz());
     imp->imprime((char*)nomeJanela.c_str());
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(4);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(1);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(3);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(2);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(10);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(11);
 
-    imp->espere(1);
+//    imp->espere(1);
     avp->insere(12);
 
+
+    imp->espere(1);
+    avp->remover(10);
+    avp->remover(1);
+    avp->remover(2);
+//    avp->remover(4);
+//    avp->remover(3);
+//    avp->remover(11);
 
     imp->espere(1);
 
