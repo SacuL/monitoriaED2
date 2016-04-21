@@ -194,13 +194,37 @@ void ArvoreVermelhoPreta::insere(int valor){
     insereAVP(raiz,NULL,valor);
 }
 
-
-No* ArvoreVermelhoPreta::getSucessor(No* no){
-    No* aux = no->getProx();
-    while(aux->getAnt() != NULL){
-        aux = aux->getAnt();
+void ArvoreVermelhoPreta::trocaNos(No* noVelho, No* noNovo){
+    if(noVelho->getPai() == NULL){
+        raiz = noNovo;
+    }else{
+        if(noVelho == noVelho->getPai()->getAnt()){
+            noVelho->getPai()->setAnt(noNovo);
+        }else{
+            noVelho->getPai()->setProx(noNovo);
+        }
     }
-    return aux;
+    if(noNovo != NULL){
+        noNovo->setPai(noVelho->getPai());
+    }
+
+}
+No* ArvoreVermelhoPreta::getPredecessor(No* no){
+    while(no->getProx() != NULL){
+        no = no->getProx();
+    }
+    return no;
+}
+
+No* ArvoreVermelhoPreta::getIrmao(No* no){
+    if(no == NULL || no->getPai() == NULL){
+        cout<<"\n\nERRO NO OU PAI DO NO EH NULL!!"<<endl;
+    }
+    if(no == no->getPai()->getAnt()){
+        return no->getPai()->getProx();
+    }else{
+        return no->getPai()->getAnt();
+    }
 }
 
 void ArvoreVermelhoPreta::remover(int valor){
@@ -208,211 +232,197 @@ void ArvoreVermelhoPreta::remover(int valor){
         return;
     }
     No* p = raiz;
-    No* y = NULL;
-    No* q = NULL;
     int achou = 0;
-    while( p!= NULL && achou == 0 ){
+    while( p!= NULL  ){
         if(p->getValor() == valor){
             achou = 1;
+            break;
         }
-        if(achou == 0){
-            if(p->getValor() < valor){
-                p = p->getProx();
-            }else{
-                p = p->getAnt();
-            }
+        if(p->getValor() < valor){
+            p = p->getProx();
+        }else{
+            p = p->getAnt();
         }
     }
     if(achou == 0){
         // nao encontrou o valor
         return;
     }else{
-        std::cout<<"oskey1"<<endl;
+        cout<<"Iniciando remocao do valor "<<valor<<endl;
+        if(p->getAnt() != NULL && p->getProx() != NULL){
+            cout << "No a ser removido tem 2 filhos" <<endl;
+            No* predecessor = getPredecessor(p->getAnt());
+            cout << "Seu predecessor eh o no "<<predecessor->getValor()<<endl;
+            cout << "Substituindo o no a ser removido "<<p->getValor()<<" pelo seu predecessor "<<predecessor->getValor()<<endl;
+            p->setValor(predecessor->getValor());
+            p = predecessor;
+            cout << "Agora o no a ser ajustado eh o no "<<p->getValor()<<endl;
+        }else{
+            cout << "No a ser removido tem 1 ou nenhum filho" <<endl;
+        }
+
+        // p deve ser uma folha ou ter apenas 1 filho
         if(p->getAnt() == NULL || p->getProx() == NULL){
-            y = p;
         }else{
-            y = getSucessor(p);
+            cout << "\n\nERRO: P TEM 2 FILHOS!" << endl;
         }
-
-        if(y->getAnt() != NULL){
-
-            q = y->getAnt();
-        }else{
-
-            q = y->getProx();
-//            if(y->getProx() != NULL){
-//                q = y->getProx();
-//            }else{
-//                q = NULL;
-//            }
-        }std::cout<<"oskey3"<<endl;
-        if(q!= NULL){
-            q->setPai(y->getPai());
-        }
-        std::cout<<"oskey4"<<endl;
-
-
-
-        if(y->getPai() == NULL){
-            raiz = q;
-        }else{
-            if( y == y->getPai()->getAnt()){
-                y->getPai()->setAnt(q);
+        // pega o unico filho de p, se houver
+        No* filho = (p->getProx()==NULL) ? p->getAnt() : p->getProx();
+        if(p->getCor() == PRETO){
+            if(filho != NULL){
+                p->setCor(filho->getCor());
             }else{
-                y->getPai()->setProx(q);
+                p->setCor(PRETO);
             }
-        }
-        if( y != p){
-            p->setValor(y->getValor());
-        }
-        if(y->getCor() == PRETO){
-            corrigeRemocao(q);
+            removerCaso1(p);
         }
 
+        trocaNos(p,filho);
 
-//        if( y != p ){
-//            p->setCor(y->getCor());
-//            p->setValor(y->getValor());
-//        }
-//        if(y->getCor() == PRETO){
-//            corrigeRemocao(q);
-//        }
+        delete p;
+
+        cout << "DELETOU " << valor << endl;
     }
-    std::cout << "DELETOU " << valor << endl;
 }
 
-void ArvoreVermelhoPreta::corrigeRemocao(No* x){
-    if(x == NULL){
+void ArvoreVermelhoPreta::removerCaso1(No* n){
+    cout << "Remocao caso 1(no="<<n->getValor()<<"):";
+    if(n->getPai()==NULL){
+        cout<<" pai eh null. Fim."<<endl;
         return;
+    }else{
+        cout<<" pai nao eh null. Fim do caso 1."<<endl;
+        removerCaso2(n);
     }
+}
 
-    std::cout<<"corrigindo "<<x->getValor()<<endl;
+void ArvoreVermelhoPreta::removerCaso2(No* n){
+    cout << "Remocao caso 2(no="<<n->getValor()<<"):";
+    No* irmao = getIrmao(n);
+    if(irmao->getCor()==VERMELHO){
+        cout << "A cor do no " << irmao->getValor() << " eh VERMELHO"<<endl;
+    }else{
+        cout << "A cor do no " << irmao->getValor() << " eh PRETO"<<endl;
+    }
+    if(irmao->getCor() == VERMELHO){
+        cout<<" irmao vermelho: rotacionar.";
+        n->getPai()->setCor(VERMELHO);
+        irmao->setCor(PRETO);
 
-    No* w;
+        if(n == n->getPai()->getAnt()){
+            rotacaoEsquerda(n->getPai());
+        }else{
+            rotacaoDireita(n->getPai());
+        }
+    }else{
+        cout<<" irmao NAO eh vermelho.";
+    }
+    cout << " Fim do caso 2."<<endl;
+    removerCaso3(n);
+}
 
-    while( x != raiz && x->getCor() == PRETO){
-        if (x == x->getPai()->getAnt()) {
-            std::cout<<"ok1"<<endl;
-            w = x->getPai()->getProx();
-            if (w->getCor() == VERMELHO) { //CASO 1
-                w->setCor(PRETO);
-                x->getPai()->setCor(VERMELHO);
-                rotacaoEsquerda(x->getPai());
-//                raiz = left_rotate(raiz, x->getPai());
-                w = x->getPai()->getProx();
-            }
-            //CASO 2
-            if (w->getAnt()->getCor() == PRETO && w->getProx()->getCor() == PRETO) {
-                w->setCor(VERMELHO);
-                x = x->getPai();
-            } else {
-                if (w->getProx()->getCor() == PRETO) { //CASO 3
-                    w->getAnt()->setCor(PRETO);
-                    w->setCor(VERMELHO);
-                    rotacaoDireita(w);
-//                    raiz = right_rotate(raiz, w);
-                    w = x->getPai()->getProx();
+void ArvoreVermelhoPreta::removerCaso3(No* n){
+    cout << "Remocao caso 3(no="<<n->getValor()<<"):";
+    No* irmao = getIrmao(n);
+    if(irmao == NULL){
+        cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
+    }
+    if(n->getPai()->getCor() == PRETO && irmao->getCor()== PRETO){
+        if(irmao->getAnt()==NULL || irmao->getAnt()->getCor() == PRETO){
+            if(irmao->getProx()==NULL || irmao->getProx()->getCor() == PRETO){
+                cout << " pai, irmao, e filhos do irmao PRETOS:\ncolorir irmao de vermelho e voltar para caso 1 no pai do no atual."<<endl<<"Fim do caso 3."<<endl;
+                irmao->setCor(VERMELHO);
+                if(irmao->getCor()==VERMELHO){
+                    cout << "A cor do no " << irmao->getValor() << " eh VERMELHO"<<endl;
+                }else{
+                    cout << "A cor do no " << irmao->getValor() << " eh PRETO"<<endl;
                 }
-                //CASO 4
-                w->setCor(x->getPai()->getCor());
-                x->getPai()->setCor(PRETO);
-                w->getProx()->setCor(PRETO);
-                rotacaoEsquerda(x->getPai());
-//                raiz = left_rotate(raiz, x->getPai());
-                x = raiz;
-            }
-        } else {
-            std::cout<<"ok2"<<endl;
-            w = x->getPai()->getAnt();
-            if (w->getCor() == VERMELHO) {
-                w->setCor(PRETO);
-                x->getPai()->setCor(VERMELHO);
-                rotacaoDireita(x->getPai());
-//                raiz = right_rotate(raiz, x->getPai());
-                w = x->getPai()->getAnt();
-            }
-            if (w->getProx()->getCor() == PRETO && w->getAnt()->getCor() == PRETO) {
-                w->setCor(VERMELHO);
-                x = x->getPai();
-            } else {
-                if (w->getAnt()->getCor() == PRETO) {
-                    w->getProx()->setCor(PRETO);
-                    w->setCor(VERMELHO);
-                    rotacaoEsquerda(w);
-//                    raiz = left_rotate(raiz, w);
-                    w = x->getPai()->getAnt();
-                }
-                w->setCor(x->getPai()->getCor());
-                x->getPai()->setCor(PRETO);
-                w->getAnt()->setCor(PRETO);
-                rotacaoDireita(x->getPai());
-//                raiz = right_rotate(raiz, x->getPai());
-                x = raiz;
+                removerCaso1(n->getPai());
+
+                return;
             }
         }
     }
-    x->setCor(PRETO);
+    cout<<" nada a fazer. Fim do caso 3"<<endl;
+    removerCaso4(n);
+}
 
-//    if(p == NULL){
-//        return;
-//    }
-//
-//    No* s;
-//    while (p!= raiz && p->getCor() == PRETO){
-//        if(p->getPai()->getAnt() == p){
-//            s = p->getPai()->getProx();
-//            if(s->getCor() == VERMELHO){
-//                s->setCor(PRETO);
-//                p->getPai()->setCor(VERMELHO);
-//                rotacaoEsquerda(p->getPai());
-//                s = p->getPai()->getProx();
-//            }
-//            if(s->getProx()->getCor() == PRETO && s->getAnt()->getCor() == PRETO){
-//                s->setCor(VERMELHO);
-//                p = p->getPai();
-//            }else{
-//                if(s->getAnt()->getCor()==PRETO){
-//                    s->getAnt()->setCor(PRETO);
-//                    s->setCor(VERMELHO);
-//                    rotacaoDireita(s);
-//                    s = p->getPai()->getProx();
-//                }
-//                s->setCor(p->getPai()->getCor());
-//                p->getPai()->setCor(PRETO);
-//                s->getProx()->setCor(PRETO);
-//                rotacaoEsquerda(p->getPai());
-//                p = raiz;
-//            }
-//        }else{
-//            s = p->getPai()->getAnt();
-//            if(s->getCor() == VERMELHO){
-//                s->setCor(PRETO);
-//                p->getPai()->setCor(VERMELHO);
-//                rotacaoDireita(p->getPai());
-//                s = p->getPai()->getAnt();
-//            }
-//            if(s->getAnt()->getCor() == PRETO && s->getProx()->getCor() == PRETO){
-//                s->setCor(VERMELHO);
-//                p = p->getPai();
-//            }else{
-//                if(s->getAnt()->getCor() == PRETO){
-//                    s->getProx()->setCor(PRETO);
-//                    s->setCor(VERMELHO);
-//                    rotacaoEsquerda(s);
-//                    s = p->getPai()->getAnt();
-//                }
-//                s->setCor(p->getPai()->getCor());
-//                p->getPai()->setCor(PRETO);
-//                s->getAnt()->setCor(PRETO);
-//                rotacaoDireita(p->getPai());
-//                p = raiz;
-//            }
-//        }
-//
-//        p->setCor(PRETO);
-//        raiz->setCor(PRETO);
-//
-//    }
+void ArvoreVermelhoPreta::removerCaso4(No* n){
+    cout << "Remocao caso 4(no="<<n->getValor()<<"):";
+    No* irmao = getIrmao(n);
+    if(irmao == NULL){
+        cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
+    }
+    if(n->getPai()!= NULL && n->getPai()->getCor() == VERMELHO && irmao->getCor()==PRETO){
+        if(irmao->getAnt() == NULL || irmao->getAnt()->getCor() == PRETO){
+            if(irmao->getProx() == NULL || irmao->getProx()->getCor() == PRETO){
+                cout << " pai VERMELHO, irmao, e filhos do irmao PRETOS:\ncolorir irmao de vermelho e pai de preto."<<endl<<"Fim do caso 4."<<endl;
+                irmao->setCor(VERMELHO);
+                n->getPai()->setCor(PRETO);
+                return;
+            }
+        }
+    }
+    cout << " nada a fazer. Fim do caso 4."<<endl;
+    removerCaso5(n);
+
+}
+
+void ArvoreVermelhoPreta::removerCaso5(No* n){
+    cout << "Remocao caso 5(no="<<n->getValor()<<"):";
+    No* irmao = getIrmao(n);
+    if(irmao == NULL){
+        cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
+    }
+    if( n == n->getPai()->getAnt() && irmao->getCor() == PRETO
+        && (irmao->getAnt() != NULL && irmao->getAnt()->getCor() == VERMELHO)
+        && (irmao->getProx() == NULL || irmao->getAnt()->getCor() == PRETO)){
+        cout<< " no a esquerda do pai com irmao preto, sobrinho a esquerda vermelho e sobrinho a direita preto:\n"
+            << "colorir irmao de vermelho, sobrinho a esquerda de preto e rotacionar o irmao para direita. Fim do caso 5."<<endl;
+        irmao->setCor(VERMELHO);
+        irmao->getAnt()->setCor(PRETO);
+        rotacaoDireita(irmao);
+    }else if( n == n->getPai()->getProx() && irmao->getCor() == PRETO
+        && (irmao->getProx() != NULL && irmao->getProx()->getCor() == VERMELHO)
+        && (irmao->getAnt() == NULL || irmao->getAnt()->getCor() == PRETO)){
+        cout<< " no a direita do pai com irmao preto, sobrinho a direita vermelho e sobrinho a esquerda preto:\n"
+            << "colorir irmao de vermelho, sobrinho a direita de preto e rotacionar o irmao para esquerda. Fim do caso 5."<<endl;
+        irmao->setCor(VERMELHO);
+        irmao->getProx()->setCor(PRETO);
+        rotacaoEsquerda(irmao);
+    }else{
+        cout<< " nada a fazer. Fim do caso 5."<<endl;
+    }
+    removerCaso6(n);
+}
+
+void ArvoreVermelhoPreta::removerCaso6(No* n){
+    cout << "Remocao caso 6(no="<<n->getValor()<<"):";
+    No* irmao = getIrmao(n);
+    if(irmao == NULL){
+        cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
+    }
+    cout<<" colorir irmao com a cor do pai e o pai de preto."<<endl;
+    irmao->setCor(n->getPai()->getCor());
+    n->getPai()->setCor(PRETO);
+
+    if(n == n->getPai()->getAnt()){
+        if(irmao->getProx()==NULL){
+            cout<<"\n\nERRO SOBRINHO A DIREITA IGUAL A NULL"<<endl;
+        }else if (irmao->getProx()->getCor()!=VERMELHO){
+            cout<<"\n\nERRO SOBRINHO A DIREITA EH PRETO"<<endl;
+        }
+        cout<<"No eh filho a esquerda: colorir sobrinho a direita de preto e rotacionar o pai para a esquerda. Fim do caso 6"<<endl;
+        irmao->getProx()->setCor(PRETO);
+        rotacaoEsquerda(n->getPai());
+    }else{
+        if(irmao->getAnt()==NULL || irmao->getAnt()->getCor()!=VERMELHO){
+            cout<<"\n\nERRO SOBRINHO A ESQUERDA IGUAL A NULL OU PRETO"<<endl;
+        }
+        cout<<"No eh filho a direita: colorir sobrinho a esquerda de preto e rotacionar o pai para a direita. Fim do caso 6"<<endl;
+        irmao->getAnt()->setCor(PRETO);
+        rotacaoDireita(n->getPai());
+    }
 }
 
 

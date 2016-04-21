@@ -23,8 +23,16 @@ class ArvoreVermelhoPreta
         void corrigeCaso5(No* no);
         void rotacaoEsquerda(No* no);
         void rotacaoDireita(No* no);
-        void corrigeRemocao(No* no);
-        No* getSucessor(No* no);
+        void removerCaso1(No* n);
+        void removerCaso2(No* n);
+        void removerCaso3(No* n);
+        void removerCaso4(No* n);
+        void removerCaso5(No* n);
+        void removerCaso6(No* n);
+        No* getPredecessor(No* no);
+        No* getIrmao(No* no);
+        void trocaNos(No* noVelho, No* noNovo);
+
 
 };
 

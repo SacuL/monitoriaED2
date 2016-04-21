@@ -226,43 +226,43 @@
 	<imprimeEstrutura.h>
 	<AVL.h>
 
-1460751941 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
+1461013909 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
 	"ArvoreVermelhoPreta.h"
 	<iostream>
 
-1460743712 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
+1461003168 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
 	<No.h>
 
-1458843711 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no.h
 	<stdlib.h>
 
-1452873501 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\lista.cpp
+1460761911 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\lista.cpp
 	"Lista.h"
 	<stdlib.h>
 	<cstring>
 	<iostream>
 
-1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\lista.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\lista.h
 	"No_Lista.h"
 
-1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no_lista.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\no_lista.h
 	<stdlib.h>
 	<string>
 
-1460752345 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\main.cpp
+1461013162 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\main.cpp
 	<iostream>
 	<imprimeEstrutura.h>
 	<ArvoreVermelhoPreta.h>
 
-1458844316 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\imprimeestrutura.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\imprimeestrutura.h
 	<No.h>
 	<Lista.h>
 	<NoBinomial.h>
 
-1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\nobinomial.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\nobinomial.h
 	<stdlib.h>
 
-1458852834 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\imprimeestrutura.cpp
+1460761911 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\src\imprimeestrutura.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<string>
@@ -274,10 +274,10 @@
 	<time.h>
 	<thread>
 
-1452873496 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\glut.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\glut.h
 	"freeglut_std.h"
 
-1452873497 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\freeglut_std.h
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore vermelho-preta\include\gl\freeglut_std.h
 	<windows.h>
 	<OpenGL/gl.h>
 	<OpenGL/glu.h>
