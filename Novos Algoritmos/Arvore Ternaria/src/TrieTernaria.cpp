@@ -70,22 +70,7 @@ No_Ter* TrieTernaria::insereAux(No_Ter* no, string palavra){
     return no;
 }
 
-void TrieTernaria::deletaT(No_Ter* n){
 
-    if(n != NULL){
-
-        No_Ter *aux = n;
-        while(aux->getEsq() != NULL){aux = aux->getEsq();}
-        while(aux != NULL){
-
-            deletaT(aux->getMeio());
-            aux = aux->getDir();
-        }
-        delete n;
-    }
-
-
-}
 void TrieTernaria::imprime(){
     imprimeAux(raiz,"");
 }
@@ -100,11 +85,52 @@ void TrieTernaria::imprimeAux(No_Ter* no, string palavra){
     imprimeAux(no->getDir(),palavra);
 }
 
-//void TrieTernaria::remove(char *c, int tam){
+void TrieTernaria::remover(string palavra){
+    if(palavra.empty()) return;
+    removerAux(palavra, raiz);
+}
 
-//    removeT(c,raiz,0,tam);
+bool TrieTernaria::removerAux(string palavra, No_Ter* no){
 
-//}
+    if(no == NULL) return true;
+
+    char caractere = palavra.at(0);
+
+    if(palavra.size() > 1){
+        if(caractere == no->getChar()){
+            if(removerAux(palavra.substr(1,palavra.size()),no->getMeio())){
+                no->setMeio(NULL);
+            }
+        }else if (caractere > no->getChar()){
+            if(removerAux(palavra,no->getDir())){
+                no->setDir(NULL);
+            }
+        }else{
+            if(removerAux(palavra,no->getEsq())){
+                no->setEsq(NULL);
+            }
+        }
+    }else{
+        if(no->getChave()){
+            if(caractere == no->getChar()){
+                // encontrou a palavra
+                no->setChave(false);
+            }
+        }
+    }
+
+    if(no->getChave() == false &&
+       no->getEsq() == NULL &&
+       no->getDir() == NULL &&
+       no->getMeio() == NULL){
+        delete no;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 No_Ter** TrieTernaria::getRaiz(){
 
     return &raiz;
@@ -112,7 +138,14 @@ No_Ter** TrieTernaria::getRaiz(){
 }
 TrieTernaria::~TrieTernaria()
 {
+    if(raiz == NULL) return;
+    deletaArvore(raiz);
+}
 
-//    deletaT(raiz);
-
+void TrieTernaria::deletaArvore(No_Ter* no)
+{
+    if(no->getEsq() != NULL) deletaArvore(no->getEsq());
+    if(no->getDir() != NULL) deletaArvore(no->getDir());
+    if(no->getMeio()!= NULL) deletaArvore(no->getMeio());
+    delete no;
 }

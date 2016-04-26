@@ -37,6 +37,7 @@ int main()
     trie->insere(s11);
     trie->insere(s12);
     trie->imprime();
+
     imp->finalizaImpressao();
     delete trie;
     delete imp;

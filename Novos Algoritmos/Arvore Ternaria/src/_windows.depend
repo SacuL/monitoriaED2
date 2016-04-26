@@ -336,3 +336,75 @@
 1457713760 source:c:\users\okty\desktop\arvore ternaria\src\trieternaria.cpp
 	"TrieTernaria.h"
 
+1460761911 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"No.h"
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1460761910 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\gl\glut.h
+	"freeglut_std.h"
+
+1460761910 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\no.h
+	<stdlib.h>
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+
+1460761910 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\lista.h
+	"No_Lista.h"
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\nobinomial.h
+	<stdlib.h>
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\no_b.h
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\no_mw.h
+	<iostream>
+
+1460761911 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\no_ter.h
+	<stdlib.h>
+
+1460761911 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1461690282 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\src\trieternaria.cpp
+	"TrieTernaria.h"
+
+1461690511 c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\include\trieternaria.h
+	<No_Ter.h>
+	<string>
+	<iostream>
+
+1461690350 source:c:\users\lucas\documents\monitoriaed2\novos algoritmos\arvore ternaria\src\main.cpp
+	<iostream>
+	<TrieTernaria.h>
+	<string>
+	<imprimeEstrutura.h>
+
