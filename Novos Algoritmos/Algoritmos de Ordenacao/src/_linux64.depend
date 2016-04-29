@@ -949,7 +949,7 @@
 	<time.h>
 	<imprimeEstrutura.h>
 
-1461786293 source:/home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/src/imprimeEstrutura.cpp
+1461884771 source:/home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/src/imprimeEstrutura.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<string>
@@ -975,7 +975,7 @@
 1447213184 /home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/include/No.h
 	<stdlib.h>
 
-1461790302 /home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/include/imprimeEstrutura.h
+1461877887 /home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/include/imprimeEstrutura.h
 	<No.h>
 	<Lista.h>
 	<NoBinomial.h>
@@ -1011,7 +1011,7 @@
 	<cstring>
 	<iostream>
 
-1461799121 source:/home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/src/main.cpp
+1461887447 source:/home/batman/Dropbox/codigosTeste/Algoritmos de Ordenacao/src/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>

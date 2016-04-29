@@ -840,8 +840,8 @@ void imprimeEstrutura::desenhaBarra(float *pos1, float *pos2){
         glBegin(GL_QUADS);
             glVertex3f(pos1[0],pos1[1]-0.3,0.0);
             glVertex3f(pos1[0],pos1[1]+0.3,0.0);
-            glVertex3f(pos1[0]+1.5,pos1[1]+0.3,0.0);
-            glVertex3f(pos1[0]+1.5,pos1[1]-0.3,0.0);
+            glVertex3f(pos2[0],pos2[1]+0.3,0.0);
+            glVertex3f(pos2[0],pos2[1]-0.3,0.0);
         glEnd();
     glPopMatrix();
 
@@ -858,11 +858,15 @@ void imprimeEstrutura::percorreVetor(float *posVetor){
     int i;
     float cor[] = {0.0, 0.0, 1.0};
     float posH[2];
-    posH[0] = posVetor[0] + 1.0;
     posH[1] = posVetor[1];
     stringstream *ss;
     for(i = 0; i < *tamVet; i++){
+        posH[0] = posVetor[0] + 1.0;
+        if(cores != NULL){
 
+            posH[0] += cores[i][3];
+
+        }
         ss = new stringstream();
         *ss << vet[0][i];
         if(i+1 < *tamVet){
@@ -876,10 +880,6 @@ void imprimeEstrutura::percorreVetor(float *posVetor){
             cor[1] = cores[i][1];
             cor[2] = cores[i][2];
 
-        }else{
-
-            cout << "eh null essa porra"<<endl;
-
         }
         desenhaNoLista(posVetor, ss->str(),cor);
         glColor3f(0.0, 0.0, 0.0);
@@ -888,6 +888,11 @@ void imprimeEstrutura::percorreVetor(float *posVetor){
         *ss << i;
         escreve((char*)ss->str().c_str(),posVetor[0]-0.1,posVetor[1]+0.5);
         posVetor[0] += 1.1;
+        if(cores != NULL){
+
+            posVetor[0] += cores[i][3];
+
+        }
         delete ss;
 
     }

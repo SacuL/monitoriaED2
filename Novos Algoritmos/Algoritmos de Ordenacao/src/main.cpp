@@ -170,17 +170,24 @@ void mergeSort(int begin, int end, int* vet, int* vetAux, float **cor, void (esp
 
     int left = 0, right = 0, middle = 0;
     int i = 0;
-
     if(begin == end)
         return;
 
     middle = (begin + end)/2;
 
+    cor[middle][3] = 1;
+    espera(1);
     mergeSort(begin,middle,vet,vetAux,cor,espera);
     mergeSort(middle + 1,end,vet,vetAux,cor,espera);
+    cor[middle][3] = 0;
 
     left = begin;
     right = middle + 1;
+
+    trocaCor(cor,begin,0.0,0.5,0.0);
+    trocaCor(cor,end,0.0,0.5,0.0);
+    if(end-begin > 1)trocaCor(cor,middle,0.8,0.8,0.0);
+    espera(1);
 
     for(i = begin; i <= end; i++)
     {
@@ -189,15 +196,22 @@ void mergeSort(int begin, int end, int* vet, int* vetAux, float **cor, void (esp
         {
             vetAux[i] = vet[left];
             left++;
+
         }
         else
         {
             vetAux[i] = vet[right];
             right++;
+
         }
     }
-    for(i = begin; i <= end; i++)
+    for(i = begin; i <= end; i++){
         vet[i] = vetAux[i];
+    }
+    if(end-begin > 1)trocaCor(cor,middle,0.0,0.0,1.0);
+    trocaCor(cor,begin,0.0,0.0,1.0);
+    trocaCor(cor,end,0.0,0.0,1.0);
+
 }
 void heapSort(int* vet, int tam, float **cor, void (espera)(int))
 {
@@ -376,10 +390,11 @@ float** inicializaMatrizCores(int tam){
     cores = new float*[tam];
     for(int i = 0; i < tam; i++){
 
-        cores[i] = new float[3];
+        cores[i] = new float[4];
         cores[i][0] = 0.0;
         cores[i][1] = 0.0;
         cores[i][2] = 1.0;
+        cores[i][3] = 0.0;
 
     }
     return cores;
