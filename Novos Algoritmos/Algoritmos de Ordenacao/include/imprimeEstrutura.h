@@ -32,7 +32,7 @@ class imprimeEstrutura
         void setPriGraficoHashing(int* tabela, int tamTabela);
         void setPriHashingLista(Lista* l, int tamTabela);
         void setPriListaEncadeada(No_Lista* l);
-        void setPriVetor(int* i, int tam);
+        void setPriVetor(int** i, int* tam, float **cores);
         void setPriHeapBinomial(No_Binomial** b);
         void setPriArvoreB(No_B **b);
         void setPriArvoreMultiWay(No_MW **m);
@@ -41,10 +41,7 @@ class imprimeEstrutura
         void setARGS(int argc, char* argv[]);
         int* getPriBinarioCont();
         void finalizaImpressao();
-        void espere(int tempo);
-        void espereMilis(float tempo);
-        void setNosColorir(int noLaranja1, int noLaranja2, int noVerde1, int noVerde2);
-        void setPivo(int pivo);
+        static void espere(int tempo);
         ~imprimeEstrutura(){};
     private:
 

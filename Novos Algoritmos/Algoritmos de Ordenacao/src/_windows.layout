@@ -2,24 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="..\include\Huffman_Lista.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1347" topLine="7" />
-		</Cursor>
-	</File>
 	<File name="..\include\No_B.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="49" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\include\No_HUF.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="225" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\include\imprimeEstrutura.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1450" topLine="26" />
 		</Cursor>
 	</File>
 	<File name="..\include\No_Ter.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,78 +12,24 @@
 			<Cursor1 position="305" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="..\include\imprimeEstrutura.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2235" topLine="49" />
+		</Cursor>
+	</File>
+	<File name="..\include\No_HUF.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="225" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4578" topLine="83" />
+			<Cursor1 position="292" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="56" />
-			<Collapse line="91" />
-			<Collapse line="120" />
-			<Collapse line="156" />
-		</Folding>
 	</File>
 	<File name="imprimeEstrutura.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1130" topLine="41" />
+			<Cursor1 position="32559" topLine="1380" />
 		</Cursor>
-		<Folding>
-			<Collapse line="54" />
-			<Collapse line="73" />
-			<Collapse line="85" />
-			<Collapse line="101" />
-			<Collapse line="111" />
-			<Collapse line="134" />
-			<Collapse line="337" />
-			<Collapse line="342" />
-			<Collapse line="370" />
-			<Collapse line="377" />
-			<Collapse line="384" />
-			<Collapse line="427" />
-			<Collapse line="450" />
-			<Collapse line="455" />
-			<Collapse line="501" />
-			<Collapse line="507" />
-			<Collapse line="527" />
-			<Collapse line="570" />
-			<Collapse line="576" />
-			<Collapse line="671" />
-			<Collapse line="684" />
-			<Collapse line="697" />
-			<Collapse line="703" />
-			<Collapse line="725" />
-			<Collapse line="755" />
-			<Collapse line="820" />
-			<Collapse line="842" />
-			<Collapse line="855" />
-			<Collapse line="862" />
-			<Collapse line="950" />
-			<Collapse line="987" />
-			<Collapse line="1002" />
-			<Collapse line="1008" />
-			<Collapse line="1013" />
-			<Collapse line="1018" />
-			<Collapse line="1026" />
-			<Collapse line="1033" />
-			<Collapse line="1039" />
-			<Collapse line="1066" />
-			<Collapse line="1074" />
-			<Collapse line="1096" />
-			<Collapse line="1101" />
-			<Collapse line="1112" />
-			<Collapse line="1127" />
-			<Collapse line="1156" />
-			<Collapse line="1161" />
-			<Collapse line="1223" />
-			<Collapse line="1243" />
-			<Collapse line="1304" />
-			<Collapse line="1309" />
-			<Collapse line="1329" />
-			<Collapse line="1352" />
-			<Collapse line="1402" />
-			<Collapse line="1407" />
-			<Collapse line="1458" />
-			<Collapse line="1482" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>

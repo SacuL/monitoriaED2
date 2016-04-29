@@ -29,8 +29,9 @@ float dx = 0.0, dy = 0.0;
 Lista* listaHashing;
 int tamListaHashing;
 No_Lista* listaEncadeada;
-int* vet;
-int tamVet;
+int **vet;//vetor a ser impresso
+int *tamVet;//tamanho do vetor a ser impresso
+float **cores;//matriz de cores para serrem usadas em algoritmos de ordenacao
 No_Binomial** Binomial;
 No_Binomial* priBinomial;
 No_B** BTREE;
@@ -45,12 +46,6 @@ thread *t1;
 clock_t inicio;
 int wait;
 bool full = false;
-int coresVetor[] = {-1,-1,-1,-1}; // marca quais nos colorir diferente na ordenacao do vetor
-int pivot = -1;
-
-void imprimeEstrutura::setPivo(int i){
-    pivot = i;
-}
 
 void imprimeEstrutura::inicializa(){
 
@@ -706,7 +701,6 @@ void imprimeEstrutura::setPriListaEncadeada(No_Lista* l){
     listaEncadeada = l;
 
 }
-
 void imprimeEstrutura::desenhaNoLista(float* pos, string valor, float *cor){
 
     glColor3fv(cor);
@@ -720,9 +714,8 @@ void imprimeEstrutura::desenhaNoLista(float* pos, string valor, float *cor){
     glEnd();
     glColor3f(1.0, 1.0, 1.0);
     escreve((char*)valor.c_str(),pos[0]-0.3,pos[1]-0.1);
+
 }
-
-
 void imprimeEstrutura::desenhaSeta(float* pos1){
 
     glColor3f(0.0,0.0,0.0);
@@ -847,73 +840,59 @@ void imprimeEstrutura::desenhaBarra(float *pos1, float *pos2){
         glBegin(GL_QUADS);
             glVertex3f(pos1[0],pos1[1]-0.3,0.0);
             glVertex3f(pos1[0],pos1[1]+0.3,0.0);
-            glVertex3f(pos1[0]+1.5,pos1[1]+0.3,0.0);
-            glVertex3f(pos1[0]+1.5,pos1[1]-0.3,0.0);
+            glVertex3f(pos2[0],pos2[1]+0.3,0.0);
+            glVertex3f(pos2[0],pos2[1]-0.3,0.0);
         glEnd();
     glPopMatrix();
 
 }
-void imprimeEstrutura::setPriVetor(int* i, int tam){
+void imprimeEstrutura::setPriVetor(int** i, int* tam, float **cor){
 
     vet = i;
     tamVet = tam;
+    cores = cor;
 
 }
-
-void imprimeEstrutura::setNosColorir(int noLaranja1, int noLaranja2, int noVerde1, int noVerde2){
-    coresVetor[0] = noLaranja1;
-    coresVetor[1] = noLaranja2;
-    coresVetor[2] = noVerde1;
-    coresVetor[3] = noVerde2;
-}
-
 void imprimeEstrutura::percorreVetor(float *posVetor){
+
     int i;
     float cor[] = {0.0, 0.0, 1.0};
     float posH[2];
-    posH[0] = posVetor[0] + 2.0;
     posH[1] = posVetor[1];
-    int noLaranja1 = coresVetor[0];
-    int noLaranja2 = coresVetor[1];
-    int noVerde1 = coresVetor[2];
-    int noVerde2 = coresVetor[3];
     stringstream *ss;
-    for(i = 0; i < tamVet; i++){
+    for(i = 0; i < *tamVet; i++){
+        posH[0] = posVetor[0] + 1.0;
+        if(cores != NULL){
 
+            posH[0] += cores[i][3];
+
+        }
         ss = new stringstream();
-        *ss << vet[i];
-        if(i+1 < tamVet){
+        *ss << vet[0][i];
+        if(i+1 < *tamVet){
 
             desenhaBarra(posVetor, posH);
 
         }
-        if(i == noLaranja1 || i == noLaranja2){
-            cor[0] = 1.0;
-            cor[1] = 0.5;
-            cor[2] = 0.0;
-        }
-        // Laranja = cor[0] = 0.9;cor[1] = 0.9;cor[2] = 0.01;
+        if(cores != NULL){
 
-        // se verde for valido substituir pela cor anterior
-        if(i == noVerde1 || i == noVerde2){
-            cor[0] = 0.15;
-            cor[1] = 0.95;
-            cor[2] = 0.05;
+            cor[0] = cores[i][0];
+            cor[1] = cores[i][1];
+            cor[2] = cores[i][2];
+
         }
         desenhaNoLista(posVetor, ss->str(),cor);
-        cor[0] = 0.0;
-        cor[1] = 0.0;
-        cor[2] = 1.0;
         glColor3f(0.0, 0.0, 0.0);
         delete ss;
         ss = new stringstream();
         *ss << i;
-        escreve((char*)ss->str().c_str(),posVetor[0]-0.3,posVetor[1]+0.5);
-        if(pivot == i){
-            char * p = "Pivo";
-            escreve(p,posVetor[0]-0.3,posVetor[1]+0.7);
+        escreve((char*)ss->str().c_str(),posVetor[0]-0.1,posVetor[1]+0.5);
+        posVetor[0] += 1.1;
+        if(cores != NULL){
+
+            posVetor[0] += cores[i][3];
+
         }
-        posVetor[0] += 2.0;
         delete ss;
 
     }
@@ -923,8 +902,8 @@ void imprimeEstrutura::espera(void){
 
     while((((clock()-inicio)/CLOCKS_PER_SEC) < wait)||(pause == true)){}
     pause = false;
-}
 
+}
 void imprimeEstrutura::setPriHeapBinomial(No_Binomial** b){
 
     Binomial = b;
@@ -1008,6 +987,14 @@ void imprimeEstrutura::setARGS(int argc, char* argv[]){
 }
 imprimeEstrutura::imprimeEstrutura(const int TIPO){
 
+    cout<<"ImprimeEstrutura implementado por: Emanuel Antonio."<<endl;
+    cout<<"Versao: 1.1 -> 27-04-2016"<<endl<<endl;
+    cout<<"Comandos: "<<endl;
+    cout<<"'f' -> fullscreen;"<<endl;
+    cout<<"'e' -> finaliza aplicacao;"<<endl;
+    cout<<"'p' -> pausa a animacao corrente;"<<endl;
+    cout<<"'mouse scroll' -> zoom;"<<endl;
+    cout<<"'clique e arraste' -> move a estrutura pela janela."<<endl<<endl;
     tipoEstrutura = TIPO;
 
 }
@@ -1021,14 +1008,6 @@ void imprimeEstrutura::espere(int tempo){
     wait = tempo;
     inicio = clock();
     espera();
-
-}
-
-void imprimeEstrutura::espereMilis(float tempo){
-
-    inicio = clock();
-    while((((clock()-inicio)) < tempo)||(pause == true)){}
-    pause = false;
 
 }
 void imprimeEstrutura::idle(void){
