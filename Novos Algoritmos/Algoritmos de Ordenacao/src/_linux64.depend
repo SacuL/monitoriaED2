@@ -1017,7 +1017,7 @@
 	<time.h>
 	<imprimeEstrutura.h>
 
-1461801588 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/src/imprimeEstrutura.cpp
+1461884771 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/src/imprimeEstrutura.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<string>
@@ -1043,7 +1043,7 @@
 1447213184 /home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/include/No.h
 	<stdlib.h>
 
-1461790302 /home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/include/imprimeEstrutura.h
+1461877887 /home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/include/imprimeEstrutura.h
 	<No.h>
 	<Lista.h>
 	<NoBinomial.h>
@@ -1079,7 +1079,7 @@
 	<cstring>
 	<iostream>
 
-1461800268 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/src/main.cpp
+1461888025 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Algoritmos de Ordenacao/src/main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>

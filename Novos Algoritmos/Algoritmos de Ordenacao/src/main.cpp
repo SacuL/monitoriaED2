@@ -218,6 +218,7 @@ void heapSort(int* vet, int tam, float **cor, void (espera)(int))
 
     int aux;
     int auxVal;
+
     while(tam > 1){
 
         for(int i = (tam/2)-1; i >=0; i--){
