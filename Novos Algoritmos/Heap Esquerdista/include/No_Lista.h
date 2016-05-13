@@ -7,14 +7,11 @@ using namespace std;
 
 class No_Lista
 {
-public:
-    No_Lista()
-    {
-        prox = NULL;
-    };
-    int info;
-    No_Lista* prox;
-    ~No_Lista() {};
+    public:
+        No_Lista(){prox = NULL;};
+        int info;
+        No_Lista* prox;
+        ~No_Lista(){};
 
 };
 
