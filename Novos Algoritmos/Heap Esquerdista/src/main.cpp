@@ -12,7 +12,7 @@ int main(int argc, char* argv[]){
     heapEsq *H = new heapEsq();
     Imp->setPriNoBinario(H->getRaiz());
     Imp->imprime((char*)"Heap Esquerdista");
-    for(int i = 0; i < 10; i++){
+    /*for(int i = 0; i < 10; i++){
 
         H->insere(rand()%60);
         Imp->espere(1);
@@ -20,41 +20,30 @@ int main(int argc, char* argv[]){
     }
     cout << "Digite um número para remover "<<endl;
     cin >> del;
-    H->remover(del);
-    /*H->insere(10);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    H->remover(del);*/
+    H->insere(10);
+    Imp->espere(1);
     H->insere(13);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(7);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(1);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(5);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(18);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(15);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(89);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(2);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->insere(15);
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str(),tempo);
+    Imp->espere(1);
     H->remover(13);
+    Imp->espere(1);
     H->imprimeHeap();
-    Imp->setPriNoBinario(H->getRaiz());
-    Imp->imprime(argc,argv,(char*)nomeJanela.c_str());*/
     Imp->finalizaImpressao();
     delete Imp;
     delete H;
