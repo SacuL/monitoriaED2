@@ -11,21 +11,17 @@ Lista::Lista()
     ult = NULL;
     tam = 0;
 }
-void Lista::push_back(int p)
-{
+void Lista::push_back(int p){
 
     No_Lista* aux = new No_Lista();
     aux->info = p;
 
-    if(pri == NULL)
-    {
+    if(pri == NULL){
 
         pri = aux;
         ult = pri;
 
-    }
-    else
-    {
+    }else{
 
         ult->prox = aux;
         ult = ult->prox;
@@ -34,16 +30,13 @@ void Lista::push_back(int p)
     tam++;
 
 }
-void Lista::erase(int p)
-{
+void Lista::erase(int p){
 
     No_Lista* it = busca(p);
     No_Lista* aux;
-    if(pri != NULL)
-    {
+    if(pri != NULL){
 
-        if(pri->info == p)
-        {
+        if(pri->info == p){
 
             it = pri->prox;
             delete pri;
@@ -53,18 +46,14 @@ void Lista::erase(int p)
         }
         return;
 
-    }
-    else
-    {
+    }else{
 
         return;
 
     }
-    if(it->prox != NULL)
-    {
+    if(it->prox != NULL){
 
-        if(it->prox->prox == NULL)
-        {
+        if(it->prox->prox == NULL){
 
             ult = it;
 
@@ -78,15 +67,12 @@ void Lista::erase(int p)
 
 
 }
-No_Lista* Lista::busca(int p)
-{
+No_Lista* Lista::busca(int p){
 
     No_Lista* it = begin();
-    while(it->prox != NULL)
-    {
+    while(it->prox != NULL){
 
-        if(it->prox->info == p)
-        {
+        if(it->prox->info == p){
 
             return it;
 
@@ -96,14 +82,12 @@ No_Lista* Lista::busca(int p)
     }
     return it;
 }
-No_Lista* Lista::search(int p)
-{
+No_Lista* Lista::search(int p){
 
     if(pri == NULL)return NULL;
     else if(pri->info == p) return pri;
     No_Lista *aux = busca(p);
-    if(aux->prox != NULL)
-    {
+    if(aux->prox != NULL){
 
         return aux->prox;
 
@@ -111,20 +95,17 @@ No_Lista* Lista::search(int p)
     return NULL;
 
 }
-No_Lista* Lista::begin()
-{
+No_Lista* Lista::begin(){
 
     return pri;
 
 }
-void Lista::clear()
-{
+void Lista::clear(){
 
     No_Lista* aux;
     No_Lista* it = begin();
 
-    while(it != NULL)
-    {
+    while(it != NULL){
 
         aux = it->prox;
         delete it;
@@ -134,14 +115,12 @@ void Lista::clear()
     }
 
 }
-int Lista::size()
-{
+int Lista::size(){
 
     return tam;
 
 }
-void Lista::push_front(int p)
-{
+void Lista::push_front(int p){
 
     No_Lista *aux = new No_Lista();
     aux->info = p;
@@ -150,15 +129,12 @@ void Lista::push_front(int p)
     tam++;
 
 }
-void Lista::print()
-{
+void Lista::print(){
 
     No_Lista* it = begin();
-    if(pri != NULL)
-    {
+    if(pri != NULL){
 
-        while(it->prox != NULL)
-        {
+        while(it->prox != NULL){
 
             cout << it->info << "-";
             it = it->prox;

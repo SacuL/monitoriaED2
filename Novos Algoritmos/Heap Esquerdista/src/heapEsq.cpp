@@ -4,15 +4,11 @@
 
 using namespace std;
 
-heapEsq::heapEsq()
-{
-    H = NULL;
+heapEsq::heapEsq(){
+
 
 }
-No* heapEsq::criaHeapEsq(int ch)
-{
-
-    cout << "Criando no " << ch << endl;
+No* heapEsq::criaHeapEsq(int ch){
 
     No* aux = new No();
     aux->setValor(ch);
@@ -22,35 +18,29 @@ No* heapEsq::criaHeapEsq(int ch)
 
     return aux;
 }
-int heapEsq::menor(int a, int b)
-{
+int heapEsq::menor(int a, int b){
     if (a<b)
         return a;
     else return b;
 }
-int heapEsq::calculaDist(No* p)
-{
+int heapEsq::calculaDist(No* p){
 
     if(p == NULL) return 0;
     return (1 + menor( calculaDist(p->getAnt()) , calculaDist(p->getProx())));
 
 }
-No* heapEsq::uniaoHeapEsq(No* H1, No* H2)
-{
-    if(H1 == NULL)
-    {
+No* heapEsq::uniaoHeapEsq(No* H1, No* H2){
+    if(H1 == NULL){
 
         return H2;
 
     }
-    if(H2 == NULL)
-    {
+    if(H2 == NULL){
 
         return H1;
 
     }
-    if(H1->getValor() < H2->getValor())
-    {
+    if(H1->getValor() < H2->getValor()){
 
         No* aux;
         aux = H1;
@@ -58,14 +48,12 @@ No* heapEsq::uniaoHeapEsq(No* H1, No* H2)
         H2 = aux;
 
     }
-    if(H1->getAnt() == NULL)
-    {
+    if(H1->getAnt() == NULL){
 
         H1->setAnt(H2);
 
     }
-    else
-    {
+    else{
 
         No* H3;
         H3 = H1->getProx();
@@ -73,8 +61,7 @@ No* heapEsq::uniaoHeapEsq(No* H1, No* H2)
         H1->setProx(H3);
         H1->getAnt()->setMarca(calculaDist(H1->getAnt()));
         H1->getProx()->setMarca(calculaDist(H1->getProx()));
-        if(H1->getAnt()->getMarca() < H1->getProx()->getMarca())
-        {
+        if(H1->getAnt()->getMarca() < H1->getProx()->getMarca()){
 
             No* aux;
             aux = H1->getAnt();
@@ -87,17 +74,13 @@ No* heapEsq::uniaoHeapEsq(No* H1, No* H2)
     H1->setMarca(calculaDist(H1) + 1);
     return H1;
 }
-void heapEsq::insere(int x)
-{
+void heapEsq::insere(int x){
 
-    if(H == NULL)
-    {
+    if(H == NULL) {
 
         H = criaHeapEsq(x);
 
-    }
-    else
-    {
+    }else{
 
         No* H2 = criaHeapEsq(x);
         H = uniaoHeapEsq(H, H2);
@@ -105,45 +88,34 @@ void heapEsq::insere(int x)
     }
 
 }
-No* heapEsq::buscaPai(No* H1, int x)
-{
+No* heapEsq::buscaPai(No* H1, int x){
 
     No* aux;
-    if(H1 == NULL)
-    {
+    if(H1 == NULL){
 
         return NULL;
 
-    }
-    else
-    {
+    }else{
 
-        if(H1->getAnt()->getValor() == x)
-        {
+        if(H1->getAnt()->getValor() == x){
 
             return H1;
 
-        }
-        else if(H1->getProx()->getValor() == x)
-        {
+        }else if(H1->getProx()->getValor() == x){
 
             return H1;
 
-        }
-        else
-        {
+        }else{
 
             aux = NULL;
-            if((H1->getAnt()!=NULL) && (H1->getAnt()->getValor() > x))
-            {
+            if((H1->getAnt()!=NULL) && (H1->getAnt()->getValor() > x)){
 
-                aux = buscaPai(H1->getAnt(),x);
+                    aux = buscaPai(H1->getAnt(),x);
 
             }
-            else if((H1->getProx()!=NULL) && (aux == NULL) && (H1->getProx()->getValor() > x))
-            {
+            else if((H1->getProx()!=NULL) && (aux == NULL) && (H1->getProx()->getValor() > x)){
 
-                aux = buscaPai(H1->getProx(),x);
+                    aux = buscaPai(H1->getProx(),x);
 
             }
 
@@ -154,26 +126,21 @@ No* heapEsq::buscaPai(No* H1, int x)
     }
 
 }
-void heapEsq::remover(int x)
-{
+void heapEsq::remover(int x){
 
     No* aux;
     No* auxAnt;
     No* auxProx;
-    if(H != NULL && H->getValor() == x)
-    {
+    if(H != NULL && H->getValor() == x){
 
         aux = H;
         auxAnt = aux->getAnt();
         auxProx = aux->getProx();
 
-    }
-    else
-    {
+    }else{
 
         aux = buscaPai(H,x);
-        if(aux != NULL)
-        {
+        if(aux != NULL){
 
             auxAnt = aux->getAnt();
             auxProx = aux->getProx();
@@ -181,38 +148,29 @@ void heapEsq::remover(int x)
         }
 
     }
-    if(aux == NULL)
-    {
+    if(aux == NULL){
 
         cout<<"No a remover nao existe"<<endl;
 
 
-    }
-    else
-    {
+    }else{
 
-        if(H != NULL && H->getValor() == x)
-        {
+        if(H != NULL && H->getValor() == x){
 
             delete aux;
             H = uniaoHeapEsq(auxAnt,auxProx);
 
-        }
-        else if(H != NULL && H->getValor() != x)
-        {
+        }else if(H != NULL && H->getValor() != x){
 
 
-            if(auxAnt!=NULL && auxAnt->getValor() == x)
-            {
+            if(auxAnt!=NULL && auxAnt->getValor() == x){
 
                 auxAnt = aux->getAnt()->getAnt();
                 auxProx = aux->getAnt()->getProx();
                 delete aux->getAnt();
                 aux->setAnt(NULL);
 
-            }
-            else
-            {
+            }else{
 
                 auxAnt = aux->getProx()->getAnt();
                 auxProx = aux->getProx()->getProx();
@@ -227,11 +185,9 @@ void heapEsq::remover(int x)
     }
 
 }
-void heapEsq::deletaH(No* H1)
-{
+void heapEsq::deletaH(No* H1){
 
-    if(H1 != NULL)
-    {
+    if(H1 != NULL){
 
         deletaH(H1->getAnt());
         deletaH(H1->getProx());
@@ -240,23 +196,19 @@ void heapEsq::deletaH(No* H1)
     }
 
 }
-void heapEsq::imprime(No* H1)
-{
+void heapEsq::imprime(No* H1){
 
-    if(H1 != NULL)
-    {
+    if(H1 != NULL){
 
         imprime(H1->getAnt());
         imprime(H1->getProx());
         cout <<"O no "<<H1->getValor()<<" tem os filho(s) ";
-        if(H1->getAnt() != NULL)
-        {
+        if(H1->getAnt() != NULL){
 
             cout<<H1->getAnt()->getValor();
 
         }
-        if(H1->getProx() != NULL)
-        {
+        if(H1->getProx() != NULL){
 
             cout<<" e "<<H1->getProx()->getValor()<<"."<<endl;
 
@@ -265,20 +217,17 @@ void heapEsq::imprime(No* H1)
     }
 
 }
-void heapEsq::imprimeHeap()
-{
+void heapEsq::imprimeHeap(){
 
     imprime(H);
 
 }
-No* heapEsq::getRaiz()
-{
+No** heapEsq::getRaiz(){
 
-    return H;
+    return &H;
 
 }
-heapEsq::~heapEsq()
-{
+heapEsq::~heapEsq(){
 
     deletaH(H);
 
