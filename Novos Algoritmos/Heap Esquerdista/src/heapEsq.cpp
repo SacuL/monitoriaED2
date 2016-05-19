@@ -91,9 +91,9 @@ void heapEsq::insere(int x){
 No* heapEsq::buscaPai(No* H1, int x){
 
     No* aux;
-    if(H1 == NULL){
+    if(H1->getAnt() == NULL && H1->getProx()->getProx()){
 
-        return NULL;
+        return H1;
 
     }else{
 
