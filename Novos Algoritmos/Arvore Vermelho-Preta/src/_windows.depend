@@ -285,3 +285,81 @@
 	<GL/glu.h>
 	<stdlib.h>
 
+1465563213 source:c:\github\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
+	"ArvoreVermelhoPreta.h"
+	<iostream>
+
+1465563044 c:\github\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
+	"No_VP.h"
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no.h
+	<stdlib.h>
+
+1465564528 source:c:\github\novos algoritmos\arvore vermelho-preta\src\imprimeestrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1465560922 c:\github\novos algoritmos\arvore vermelho-preta\include\gl\glut.h
+	"freeglut_std.h"
+
+1465560922 c:\github\novos algoritmos\arvore vermelho-preta\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1465563887 c:\github\novos algoritmos\arvore vermelho-preta\include\imprimeestrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+	<No_HUF.h>
+	<No_VP.h>
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\lista.h
+	"No_Lista.h"
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no_lista.h
+	<stdlib.h>
+	<string>
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\nobinomial.h
+	<stdlib.h>
+
+1465560920 source:c:\github\novos algoritmos\arvore vermelho-preta\src\lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1465564460 source:c:\github\novos algoritmos\arvore vermelho-preta\src\main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<ArvoreVermelhoPreta.h>
+	<time.h>
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no_b.h
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no_mw.h
+	<iostream>
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no_ter.h
+	<stdlib.h>
+
+1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no_huf.h
+	<stdlib.h>
+
+1465562982 c:\github\novos algoritmos\arvore vermelho-preta\include\no_vp.h
+	<stdlib.h>
+
