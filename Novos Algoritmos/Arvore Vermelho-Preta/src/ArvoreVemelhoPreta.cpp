@@ -38,26 +38,6 @@ void ArvoreVermelhoPreta::rotacaoEsquerda(No_VP* x){
     }
     y->setAnt(x);
     x->setPai(y);
-
-//    No_VP* temp = no->getProx();
-//    if(no->getPai() != NULL){
-//        if(no->getPai()->getProx() == no){
-//            no->getPai()->setProx(temp);
-//        }
-//        if(no->getPai()->getAnt() == no){
-//            no->getPai()->setAnt(temp);
-//        }
-//        temp->setPai(no->getPai());
-//    }else{
-//        raiz = temp;
-//        raiz->setPai(NULL);
-//    }
-//    no->setProx(temp->getAnt());
-//    temp->setAnt(no);
-//    no->setPai(temp);
-//    if(no->getProx() != NULL){
-//        no->getProx()->setPai(no);
-//    }
 }
 
 void ArvoreVermelhoPreta::rotacaoDireita(No_VP* x){
@@ -78,26 +58,6 @@ void ArvoreVermelhoPreta::rotacaoDireita(No_VP* x){
     }
     y->setProx(x);
     x->setPai(y);
-
-//    No_VP* temp = no->getAnt();
-//    if(no->getPai() != NULL){
-//        if(no->getPai()->getProx() == no){
-//            no->getPai()->setProx(temp);
-//        }
-//        if(no->getPai()->getAnt() == no){
-//            no->getPai()->setAnt(temp);
-//        }
-//        temp->setPai(no->getPai());
-//    }else{
-//        raiz = temp;
-//        raiz->setPai(NULL);
-//    }
-//    no->setAnt(temp->getProx());
-//    temp->setProx(no);
-//    no->setPai(temp);
-//    if(no->getAnt() != NULL){
-//        no->getAnt()->setPai(no);
-//    }
 }
 
 void ArvoreVermelhoPreta::corrigeCaso1(No_VP* no){
@@ -156,7 +116,7 @@ void ArvoreVermelhoPreta::corrigeCaso5(No_VP* no){
     No_VP* pai = no->getPai();
     pai->setCor(PRETO);
     avo->setCor(VERMELHO);
-    if( (no = pai->getAnt()) && (pai == avo->getAnt()) ){
+    if( (no == pai->getAnt()) && (pai == avo->getAnt()) ){
         // Rotacao a direita do avo do NO
         rotacaoDireita(avo);
     }else{
