@@ -7,7 +7,7 @@ ArvoreVermelhoPreta::ArvoreVermelhoPreta()
 {
     raiz = NULL;
 }
-void ArvoreVermelhoPreta::deletaH(No* p){
+void ArvoreVermelhoPreta::deletaH(No_VP* p){
 
     if(p != NULL){
 
@@ -20,8 +20,8 @@ void ArvoreVermelhoPreta::deletaH(No* p){
 }
 
 
-void ArvoreVermelhoPreta::rotacaoEsquerda(No* x){
-    No* y = x->getProx();
+void ArvoreVermelhoPreta::rotacaoEsquerda(No_VP* x){
+    No_VP* y = x->getProx();
     x->setProx(y->getAnt());
     if(y->getAnt() != NULL){
         y->getAnt()->setPai(x);
@@ -39,7 +39,7 @@ void ArvoreVermelhoPreta::rotacaoEsquerda(No* x){
     y->setAnt(x);
     x->setPai(y);
 
-//    No* temp = no->getProx();
+//    No_VP* temp = no->getProx();
 //    if(no->getPai() != NULL){
 //        if(no->getPai()->getProx() == no){
 //            no->getPai()->setProx(temp);
@@ -60,8 +60,8 @@ void ArvoreVermelhoPreta::rotacaoEsquerda(No* x){
 //    }
 }
 
-void ArvoreVermelhoPreta::rotacaoDireita(No* x){
-    No* y = x->getAnt();
+void ArvoreVermelhoPreta::rotacaoDireita(No_VP* x){
+    No_VP* y = x->getAnt();
     x->setAnt(y->getProx());
     if(y->getProx() != NULL){
         y->getProx()->setPai(x);
@@ -79,7 +79,7 @@ void ArvoreVermelhoPreta::rotacaoDireita(No* x){
     y->setProx(x);
     x->setPai(y);
 
-//    No* temp = no->getAnt();
+//    No_VP* temp = no->getAnt();
 //    if(no->getPai() != NULL){
 //        if(no->getPai()->getProx() == no){
 //            no->getPai()->setProx(temp);
@@ -100,7 +100,7 @@ void ArvoreVermelhoPreta::rotacaoDireita(No* x){
 //    }
 }
 
-void ArvoreVermelhoPreta::corrigeCaso1(No* no){
+void ArvoreVermelhoPreta::corrigeCaso1(No_VP* no){
     // Caso 1: Se o NO eh raiz, ele deve ser PRETO
     if(no->getPai() == NULL){
         no->setCor(PRETO);
@@ -109,7 +109,7 @@ void ArvoreVermelhoPreta::corrigeCaso1(No* no){
     }
 }
 
-void ArvoreVermelhoPreta::corrigeCaso2(No* no){
+void ArvoreVermelhoPreta::corrigeCaso2(No_VP* no){
     // Caso 2: Se o pai do NO for PRETO, a Arvore continua valida
     if(no->getPai()->getCor() == PRETO){
         return;
@@ -118,14 +118,14 @@ void ArvoreVermelhoPreta::corrigeCaso2(No* no){
     }
 }
 
-void ArvoreVermelhoPreta::corrigeCaso3(No* no){
+void ArvoreVermelhoPreta::corrigeCaso3(No_VP* no){
     // Caso 3: Pai e Tio do NO VERMELHOS - passam para PRETO e Avo de NO passa para VERMELHO
-    No* tio = no->getTio();
+    No_VP* tio = no->getTio();
 
     if(tio != NULL && tio->getCor()==VERMELHO){
         no->getPai()->setCor(PRETO);
         tio->setCor(PRETO);
-        No* avo = no->getAvo();
+        No_VP* avo = no->getAvo();
         avo->setCor(VERMELHO);
 
         corrigeCaso1(avo);
@@ -134,10 +134,10 @@ void ArvoreVermelhoPreta::corrigeCaso3(No* no){
     }
 }
 
-void ArvoreVermelhoPreta::corrigeCaso4(No* no){
+void ArvoreVermelhoPreta::corrigeCaso4(No_VP* no){
     // Caso 4: O pai do NO eh VERMELHO mas o tio de NO eh PRETO
-    No* avo = no->getAvo();
-    No* pai = no->getPai();
+    No_VP* avo = no->getAvo();
+    No_VP* pai = no->getPai();
     if( (no == pai->getProx()) && (pai == avo->getAnt()) ){
         // Rotacao a esquerda do pai do NO
         rotacaoEsquerda(pai);
@@ -150,10 +150,10 @@ void ArvoreVermelhoPreta::corrigeCaso4(No* no){
     corrigeCaso5(no);
 }
 
-void ArvoreVermelhoPreta::corrigeCaso5(No* no){
+void ArvoreVermelhoPreta::corrigeCaso5(No_VP* no){
     // Caso 5:  O pai do NO eh VERMELHO mas o tio do NO eh PRETO
-    No* avo = no->getAvo();
-    No* pai = no->getPai();
+    No_VP* avo = no->getAvo();
+    No_VP* pai = no->getPai();
     pai->setCor(PRETO);
     avo->setCor(VERMELHO);
     if( (no = pai->getAnt()) && (pai == avo->getAnt()) ){
@@ -165,10 +165,10 @@ void ArvoreVermelhoPreta::corrigeCaso5(No* no){
     }
 }
 
-void ArvoreVermelhoPreta::insereAVP(No* no, No* pai, int valor){
+void ArvoreVermelhoPreta::insereAVP(No_VP* no, No_VP* pai, int valor){
 
     if(no == NULL){
-        No* novo = new No(valor);
+        No_VP* novo = new No_VP(valor);
         if(pai != NULL){
             novo->setPai(pai);
             if(valor < pai->getValor()){
@@ -194,7 +194,7 @@ void ArvoreVermelhoPreta::insere(int valor){
     insereAVP(raiz,NULL,valor);
 }
 
-void ArvoreVermelhoPreta::trocaNos(No* noVelho, No* noNovo){
+void ArvoreVermelhoPreta::trocaNos(No_VP* noVelho, No_VP* noNovo){
     if(noVelho->getPai() == NULL){
         raiz = noNovo;
     }else{
@@ -209,14 +209,14 @@ void ArvoreVermelhoPreta::trocaNos(No* noVelho, No* noNovo){
     }
 
 }
-No* ArvoreVermelhoPreta::getPredecessor(No* no){
+No_VP* ArvoreVermelhoPreta::getPredecessor(No_VP* no){
     while(no->getProx() != NULL){
         no = no->getProx();
     }
     return no;
 }
 
-No* ArvoreVermelhoPreta::getIrmao(No* no){
+No_VP* ArvoreVermelhoPreta::getIrmao(No_VP* no){
     if(no == NULL || no->getPai() == NULL){
         cout<<"\n\nERRO NO OU PAI DO NO EH NULL!!"<<endl;
     }
@@ -231,7 +231,7 @@ void ArvoreVermelhoPreta::remover(int valor){
     if(raiz == NULL){
         return;
     }
-    No* p = raiz;
+    No_VP* p = raiz;
     int achou = 0;
     while( p!= NULL  ){
         if(p->getValor() == valor){
@@ -251,7 +251,7 @@ void ArvoreVermelhoPreta::remover(int valor){
         cout<<"Iniciando remocao do valor "<<valor<<endl;
         if(p->getAnt() != NULL && p->getProx() != NULL){
             cout << "No a ser removido tem 2 filhos" <<endl;
-            No* predecessor = getPredecessor(p->getAnt());
+            No_VP* predecessor = getPredecessor(p->getAnt());
             cout << "Seu predecessor eh o no "<<predecessor->getValor()<<endl;
             cout << "Substituindo o no a ser removido "<<p->getValor()<<" pelo seu predecessor "<<predecessor->getValor()<<endl;
             p->setValor(predecessor->getValor());
@@ -267,7 +267,7 @@ void ArvoreVermelhoPreta::remover(int valor){
             cout << "\n\nERRO: P TEM 2 FILHOS!" << endl;
         }
         // pega o unico filho de p, se houver
-        No* filho = (p->getProx()==NULL) ? p->getAnt() : p->getProx();
+        No_VP* filho = (p->getProx()==NULL) ? p->getAnt() : p->getProx();
         if(p->getCor() == PRETO){
             if(filho != NULL){
                 p->setCor(filho->getCor());
@@ -285,7 +285,7 @@ void ArvoreVermelhoPreta::remover(int valor){
     }
 }
 
-void ArvoreVermelhoPreta::removerCaso1(No* n){
+void ArvoreVermelhoPreta::removerCaso1(No_VP* n){
     cout << "Remocao caso 1(no="<<n->getValor()<<"):";
     if(n->getPai()==NULL){
         cout<<" pai eh null. Fim."<<endl;
@@ -296,9 +296,9 @@ void ArvoreVermelhoPreta::removerCaso1(No* n){
     }
 }
 
-void ArvoreVermelhoPreta::removerCaso2(No* n){
+void ArvoreVermelhoPreta::removerCaso2(No_VP* n){
     cout << "Remocao caso 2(no="<<n->getValor()<<"):";
-    No* irmao = getIrmao(n);
+    No_VP* irmao = getIrmao(n);
     if(irmao->getCor()==VERMELHO){
         cout << "A cor do no " << irmao->getValor() << " eh VERMELHO"<<endl;
     }else{
@@ -321,9 +321,9 @@ void ArvoreVermelhoPreta::removerCaso2(No* n){
     removerCaso3(n);
 }
 
-void ArvoreVermelhoPreta::removerCaso3(No* n){
+void ArvoreVermelhoPreta::removerCaso3(No_VP* n){
     cout << "Remocao caso 3(no="<<n->getValor()<<"):";
-    No* irmao = getIrmao(n);
+    No_VP* irmao = getIrmao(n);
     if(irmao == NULL){
         cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
     }
@@ -347,9 +347,9 @@ void ArvoreVermelhoPreta::removerCaso3(No* n){
     removerCaso4(n);
 }
 
-void ArvoreVermelhoPreta::removerCaso4(No* n){
+void ArvoreVermelhoPreta::removerCaso4(No_VP* n){
     cout << "Remocao caso 4(no="<<n->getValor()<<"):";
-    No* irmao = getIrmao(n);
+    No_VP* irmao = getIrmao(n);
     if(irmao == NULL){
         cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
     }
@@ -368,9 +368,9 @@ void ArvoreVermelhoPreta::removerCaso4(No* n){
 
 }
 
-void ArvoreVermelhoPreta::removerCaso5(No* n){
+void ArvoreVermelhoPreta::removerCaso5(No_VP* n){
     cout << "Remocao caso 5(no="<<n->getValor()<<"):";
-    No* irmao = getIrmao(n);
+    No_VP* irmao = getIrmao(n);
     if(irmao == NULL){
         cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
     }
@@ -396,9 +396,9 @@ void ArvoreVermelhoPreta::removerCaso5(No* n){
     removerCaso6(n);
 }
 
-void ArvoreVermelhoPreta::removerCaso6(No* n){
+void ArvoreVermelhoPreta::removerCaso6(No_VP* n){
     cout << "Remocao caso 6(no="<<n->getValor()<<"):";
-    No* irmao = getIrmao(n);
+    No_VP* irmao = getIrmao(n);
     if(irmao == NULL){
         cout<<"\n\nERRO IRMAO IGUAL A NULL"<<endl;
     }
@@ -426,7 +426,7 @@ void ArvoreVermelhoPreta::removerCaso6(No* n){
 }
 
 
-No** ArvoreVermelhoPreta::getRaiz(){
+No_VP** ArvoreVermelhoPreta::getRaiz(){
 
     return &raiz;
 
