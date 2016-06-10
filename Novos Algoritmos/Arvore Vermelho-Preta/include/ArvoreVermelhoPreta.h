@@ -9,6 +9,7 @@ class ArvoreVermelhoPreta
         ArvoreVermelhoPreta();
         void insere(int valor);
         void remover(int p);
+        int alturaVermelhoPreta();
         No_VP** getRaiz();
         ~ArvoreVermelhoPreta();
 
@@ -32,6 +33,7 @@ class ArvoreVermelhoPreta
         No_VP* getPredecessor(No_VP* no);
         No_VP* getIrmao(No_VP* no);
         void trocaNos(No_VP* noVelho, No_VP* noNovo);
+        int altura(No_VP* no);
 
 
 };

@@ -19,7 +19,7 @@ int main()
         avp->insere(rand() % 100);
         imp->espere(1);
     }
-
+    cout << avp->alturaVermelhoPreta() << endl;
     imp->finalizaImpressao();
     delete avp;
     delete imp;
