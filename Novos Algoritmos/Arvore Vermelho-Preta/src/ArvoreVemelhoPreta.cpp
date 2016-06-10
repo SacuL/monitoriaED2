@@ -431,6 +431,62 @@ No_VP** ArvoreVermelhoPreta::getRaiz(){
     return &raiz;
 
 }
+int ArvoreVermelhoPreta::alturaVermelhoPreta(){
+
+    return altura(raiz);
+
+}
+int ArvoreVermelhoPreta::altura(No_VP* no){
+
+    if(no ==  NULL){
+
+        return 0;
+
+    }else{
+        int esq = 0, dir = 0;
+
+        if(no->getAnt() != NULL && no->getProx() != NULL){
+
+            if(no->getAnt()->getCor() == no->getProx()->getCor()){
+
+                esq = altura(no->getAnt());
+                dir = altura(no->getProx());
+
+            }else{
+
+                if(no->getAnt() == VERMELHO){
+
+                    esq = altura(no->getAnt());
+
+                }else{
+
+                    dir = altura(no->getAnt());
+
+                }
+
+            }
+
+        }else{
+
+            esq = altura(no->getAnt());
+            dir = altura(no->getProx());
+
+        }
+
+
+        if(esq > dir){
+
+            return esq+1;
+
+        }else{
+
+            return dir+1;
+
+        }
+
+    }
+
+}
 ArvoreVermelhoPreta::~ArvoreVermelhoPreta()
 {
     deletaH(raiz);

@@ -285,11 +285,11 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1465563213 source:c:\github\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
+1465571598 source:c:\github\novos algoritmos\arvore vermelho-preta\src\arvorevemelhopreta.cpp
 	"ArvoreVermelhoPreta.h"
 	<iostream>
 
-1465563044 c:\github\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
+1465571146 c:\github\novos algoritmos\arvore vermelho-preta\include\arvorevermelhopreta.h
 	"No_VP.h"
 
 1465560920 c:\github\novos algoritmos\arvore vermelho-preta\include\no.h
@@ -343,7 +343,7 @@
 	<cstring>
 	<iostream>
 
-1465564460 source:c:\github\novos algoritmos\arvore vermelho-preta\src\main.cpp
+1465571649 source:c:\github\novos algoritmos\arvore vermelho-preta\src\main.cpp
 	<iostream>
 	<imprimeEstrutura.h>
 	<ArvoreVermelhoPreta.h>
