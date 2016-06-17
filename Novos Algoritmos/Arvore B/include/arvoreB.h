@@ -11,6 +11,7 @@ class ArvoreB
 {
 private :
     No_B *raiz ;
+    void zeraNo(No_B* b);
 public :
     ArvoreB( ) ;
     void inserir ( int val ) ;

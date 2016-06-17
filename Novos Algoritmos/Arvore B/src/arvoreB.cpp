@@ -17,6 +17,7 @@ void ArvoreB :: inserir ( int val )
     if ( flag )
     {
         n = new No_B ;
+        zeraNo(n);
         n -> tamanho = 1 ;
         n -> chave[1] = i ;
         n -> filho[0] = raiz ;
@@ -111,6 +112,7 @@ void ArvoreB :: split ( int val, No_B *c, No_B *n,
         mid = MIN + 1 ;
 
     *newnode = new No_B ;
+    zeraNo(*newnode);
 
     for ( i = mid + 1 ; i <= MAX ; i++ )
     {
@@ -286,6 +288,7 @@ void ArvoreB :: merge ( int k , No_B *no)
 {
 
     No_B *temp1, *temp2 ;
+
     temp1 = no -> filho[k] ;
     temp2 = no -> filho[k - 1] ;
     temp2 -> tamanho++ ;
@@ -399,5 +402,15 @@ void ArvoreB :: imprimeNo(No_B *no)
 No_B** ArvoreB::getRaiz(){
 
     return &raiz;
+
+}
+void ArvoreB::zeraNo(No_B* b){
+
+    for(int i = 0; i < MAX+1; i++){
+
+        b->filho[i] = NULL;
+        b->chave[i] = 0;
+
+    }
 
 }

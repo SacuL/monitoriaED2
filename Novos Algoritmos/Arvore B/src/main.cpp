@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    srand(time(NULL));
+    //srand(time(NULL));
     string nomeJanela = "Arvore B";
     imprimeEstrutura *imp = new imprimeEstrutura(ARVORE_B);
     ArvoreB *AB = new ArvoreB();
@@ -16,10 +16,10 @@ int main()
     for(int i = 0; i < 20; i++){
 
         AB->inserir((rand()%1000)+1);
+        imp->espere(1);
 
     }
-    imp->espere(20);
-    imp->fechaJanela();
+    imp->finalizaImpressao();
     delete imp;
     delete AB;
     return 0;
