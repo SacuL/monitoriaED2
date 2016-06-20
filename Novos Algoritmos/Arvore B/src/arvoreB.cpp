@@ -139,6 +139,8 @@ int ArvoreB::split(No_B* n, No_B** novoNo){///Reparte os valores de 'n' para o '
 No_B* ArvoreB::buscar(int valor, No_B* n){
 
     No_B* aux;
+    int k = 0;
+
     if(n == NULL){
 
         return NULL;
@@ -152,14 +154,21 @@ No_B* ArvoreB::buscar(int valor, No_B* n){
         }
 
     }
-    for(int i = 0; i <= n->tamanho; i++){///Verifica se encontra o valor nos filhos de 'n'
+    while(k < n->tamanho){///Encontra a posicao do vetor de chaves que 'valor' pode se encontrar
 
-        aux = buscar(valor,n->filho[i]);
-        if(aux != NULL){
+            if(n->chave[k] < valor)k++;
+            else break;
 
-            return aux;
+    }
+    if(n->chave[k] < valor){///Se caso 'valor' eh maior que a chave na posicao k, pegamos o filho maior de k, se nao, pegamos o filho menor
 
-        }
+        k++;
+
+    }
+    aux = buscar(valor,n->filho[k]);
+    if(aux != NULL){
+
+        return aux;
 
     }
     return NULL;

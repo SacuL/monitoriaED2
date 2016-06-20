@@ -11,10 +11,11 @@ private :
     void insereRecursivo(No_B* no, int valor);
     int split(No_B* n, No_B** novoNo);
     void deletaArvore(No_B* n);
+    No_B* buscar(int valor, No_B* n);
 
 
 public :
-    No_B* buscar(int valor, No_B* n);
+
     void inserir(int valor);
     void remover(int valor);
     bool buscar(int valor);
