@@ -286,10 +286,14 @@ void imprimeEstrutura::display(){
 
         }else{
 
-            float pos1[2];
-            pos1[0] = 10.0 + dx;
-            pos1[1] = XYcart * ( 3.0 / 5.5 )  + dy;
-            percorreB(pos1,*BTREE,altura);
+            if(*BTREE != NULL){
+
+                float pos1[2];
+                pos1[0] = 10.0 + dx;
+                pos1[1] = XYcart * ( 3.0 / 5.5 )  + dy;
+                percorreB(pos1,*BTREE,altura);
+
+            }
 
         }
 
@@ -493,7 +497,15 @@ int imprimeEstrutura::alturaArvore(){
 
     }else if(tipoEstrutura == ARVORE_B){
 
-        return alturaArvoreB(*BTREE);
+        if(*BTREE != NULL){
+
+            return alturaArvoreB(*BTREE);
+
+        }else{
+
+            return 0;
+
+        }
 
     }else if(tipoEstrutura == ARVORE_MULTIWAY){
 
@@ -1033,7 +1045,7 @@ void imprimeEstrutura::setARGS(int argc, char* argv[]){
 imprimeEstrutura::imprimeEstrutura(const int TIPO){
 
     cout<<"ImprimeEstrutura"<<endl;
-    cout<<"Versao: 1.2 -> 10-06-2016"<<endl<<endl;
+    cout<<"Versao: 1.3 -> 20-06-2016"<<endl<<endl;
     cout<<"Comandos: "<<endl;
     cout<<"'f' -> fullscreen;"<<endl;
     cout<<"'e' -> finaliza aplicacao;"<<endl;
@@ -1079,7 +1091,7 @@ void imprimeEstrutura::desenhaNoB(float *posB,int* valores, int tam){
     glPopMatrix();
     posAux[0] = posB[0] - tam/2 + 0.5;
     posAux[1] = posB[1];
-    for(int i = 1; i <= tam; i++){
+    for(int i = 0; i < tam; i++){
         ss = new stringstream;
         *ss << valores[i];
         desenhaNo(posAux,ss->str());
@@ -1103,14 +1115,19 @@ void imprimeEstrutura::percorreArvoreB(float *posB, No_B* n, float dist){
     float distX = pow(MAX+1,dist);
     posAux[0] = posB[0] - distX/2;
     distX /= (float)MAX;
-    for(int i = 0; n->filho[i] != NULL; i++){
+    if(n == NULL) return;
+    for(int i = 0; i < MAX + 2; i++){
 
-        desenhaNoB(posAux,n->filho[i]->chave,MAX);
+        if(n->filho[i] != NULL){
+
+            desenhaNoB(posAux,n->filho[i]->chave,MAX);
+
+        }
         posAux[0] += distX;
 
     }
     posAux[0] = posB[0] - pow(MAX+1,dist)/2;
-    for(int i = 0; n->filho[i] != NULL; i++){
+    for(int i = 0; i < 6; i++){
 
         percorreArvoreB(posAux, n->filho[i], dist-1);
         posAux[0] += distX;
@@ -1141,10 +1158,15 @@ void imprimeEstrutura::desenhaLinhasB(float *posB, No_B* n, float dist){
     float distX = pow(MAX+1,dist);
     posAux[0] = posB[0] - distX/2;
     distX /= (float)MAX;
-    for(int i = 0; n->filho[i] != NULL; i++){
+    if (n == NULL)return;
+    for(int i = 0; i < MAX + 2; i++){
 
-        desenhaLinha(posB,posAux);
-        desenhaLinhasB(posAux, n->filho[i], dist-1);
+        if(n->filho[i] != NULL){
+
+            desenhaLinha(posB,posAux);
+            desenhaLinhasB(posAux, n->filho[i], dist-1);
+
+        }
         posAux[0] += distX;
 
     }
