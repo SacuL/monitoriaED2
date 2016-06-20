@@ -40,7 +40,13 @@
 		</Linker>
 		<Unit filename="../include/Lista.h" />
 		<Unit filename="../include/No.h" />
+		<Unit filename="../include/NoBinomial.h" />
 		<Unit filename="../include/No_B.h" />
+		<Unit filename="../include/No_HUF.h" />
+		<Unit filename="../include/No_Lista.h" />
+		<Unit filename="../include/No_MW.h" />
+		<Unit filename="../include/No_Ter.h" />
+		<Unit filename="../include/No_VP.h" />
 		<Unit filename="../include/arvoreB.h" />
 		<Unit filename="../include/imprimeEstrutura.h" />
 		<Unit filename="Lista.cpp" />
