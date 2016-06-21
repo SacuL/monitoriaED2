@@ -123,6 +123,7 @@ No_Binomial* heapBinomial::uniaoHeapsBinomiais(No_Binomial* h1, No_Binomial* h2)
             }else{
                 aux = somaArvoresBinomiais(a,b);
                 anterior->setIrmao(aux);
+                a = aux;
             }
         }else{
             anterior = aux;

@@ -7,19 +7,22 @@ using namespace std;
 
 int main()
 {
-    srand(time(NULL));
+    //srand(time(NULL));
     string nomeJanela = "Arvore B";
+    int valor;
     imprimeEstrutura *imp = new imprimeEstrutura(ARVORE_B);
     ArvoreB *AB = new ArvoreB();
     imp->setPriArvoreB(AB->getRaiz());
     imp->imprime((char*)nomeJanela.c_str());
-    for(int i = 0; i < 20; i++){
+    for(int i = 0; i < 15; i++){
 
-        AB->inserir((rand()%1000)+1);
+        valor = (rand()%1000)+1;
+        AB->inserir(valor);
+        imp->espere(1);
+        cout << "Inserindo o valor " << valor << endl;
 
     }
-    imp->espere(20);
-    imp->fechaJanela();
+    imp->finalizaImpressao();
     delete imp;
     delete AB;
     return 0;

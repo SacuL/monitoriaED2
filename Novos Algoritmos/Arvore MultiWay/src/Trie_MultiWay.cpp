@@ -44,7 +44,7 @@ void Trie_MultiWay::imprimeMW(string s, No_MW* n){
 
             }
             imprimeMW(s,n->getChar(i));
-            s.erase(s.begin()+(s.size()-1));
+            s.erase(s.end()-1);
 
         }
 
@@ -56,11 +56,17 @@ void Trie_MultiWay::remove(char* c, int tam){
     removeMW(raiz,c,0,tam);
 
 }
-void Trie_MultiWay::removeMW(No_MW *n, char* c, int idI, int idF){
+bool Trie_MultiWay::removeMW(No_MW *n, char* c, int idI, int idF){
 
+    bool r;
     if(idI != idF){
 
-        removeMW(n->getChar(c[idI]),c,idI+1,idF);
+        r = removeMW(n->getChar(c[idI]),c,idI+1,idF);
+        if(r == true){
+
+            n->setChar(c[idI],NULL);
+
+        }
 
     }else{
 
@@ -70,8 +76,10 @@ void Trie_MultiWay::removeMW(No_MW *n, char* c, int idI, int idF){
     if(n->ehNULL()){
 
         delete n;
+        return true;
 
     }
+    return false;
 
 
 }
@@ -126,6 +134,31 @@ void Trie_MultiWay::deleteH(No_MW *n){
 
     }
     delete n;
+}
+int Trie_MultiWay::alturaMW(No_MW* n){
+
+    int alt = 0, aux;
+    for(int i = 0; i < n->getTamAlfa(); i++){
+
+        if(n->getChar(97 + i) != NULL){
+
+            aux = alturaMW(n->getChar(97 + i));
+            if(aux > alt){
+
+                alt = aux;
+
+            }
+
+        }
+
+    }
+    return (alt + 1);
+
+}
+int Trie_MultiWay::alturaMW(){
+
+    return alturaMW(raiz);
+
 }
 Trie_MultiWay::~Trie_MultiWay()
 {
