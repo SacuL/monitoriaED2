@@ -41,7 +41,7 @@ void ArvoreR::insereRecursivo(Point *MBR, Point *listaPontos, NoR *n){
         Point* auxMBR = NULL;
         NoR *aux = new NoR();
         aux->listaPontos = listaPontos;
-        aux->MBR = criaMBR(listaPontos, NULL);
+        aux->MBR = MBR;
         addFilho(n, aux);
         for(int i = 0; i <= n->idUltFilho; i++){///Corrige a MBR de 'n'
 
@@ -53,13 +53,12 @@ void ArvoreR::insereRecursivo(Point *MBR, Point *listaPontos, NoR *n){
     }else{///Se 'n' nao for folha, busco o filho mais adequado para descer na arvore
 
         int idPos = 0;
-        float areaMin = calcArea(MBR,n->filhos[0]->MBR) - calcArea(n->filhos[0]->MBR, NULL);
+        float areaMin = calcArea(MBR,n->filhos[0]->MBR) - calcArea(n->filhos[0]->MBR);
         float areaAux;
         Point* auxMBR = NULL;
         for(int i = 1; i <= n->idUltFilho; i++){///Verifica qual posicao tem a menor adicao na area da MBR
 
-            areaAux = calcArea(MBR,n->filhos[i]->MBR);
-            areaAux = areaAux - calcArea(MBR,n->filhos[i]->MBR);
+            areaAux = calcArea(MBR,n->filhos[i]->MBR) - calcArea(MBR,n->filhos[i]->MBR);
             if(areaAux < areaMin){
 
                 areaMin = areaAux;
@@ -197,16 +196,15 @@ float ArvoreR::calcArea(Point* MBR1, Point* MBR2){
  void ArvoreR::split(NoR *n, NoR **novoNo){
 
     int MID = MAX_R/2;///Encontro a posicao do meio do vetor de filhos;
-    int k=0;///Flag para percorrer o vetor de filhos do 'novoNo'
+    int k = 0;///Flag para percorrer o vetor de filhos do 'novoNo'
 
     *novoNo = new NoR();
 
-    for(int i = MID; i < MAX_R; i++){
+    for(int i = MID; i < MAX_R; i++, k++){
 
         (*novoNo)->filhos[k] = n->filhos[i];
         (*novoNo)->idUltFilho++;
         n->filhos[i] = NULL;
-        k++;
 
     }
     if(MAX_R != 1){
