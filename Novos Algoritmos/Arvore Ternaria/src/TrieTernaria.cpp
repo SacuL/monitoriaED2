@@ -20,15 +20,16 @@ bool TrieTernaria::buscaAux(No_Ter* no, string palavra){
     char caractere = palavra.at(0);
 
     if(caractere == no->getChar()){
-        if(palavra.size() == 1 && no->getChave()){
-            return true;
+        if(palavra.size() == 1){
+            if(no->getChave()){
+                return true;
+            }else{
+                return false;
+            }
         }else{
             return buscaAux(no->getMeio(),palavra.substr(1,palavra.size()));
         }
     }else{
-        if(palavra.size()== 1){
-            return false;
-        }
         if(caractere > no->getChar()){
             return buscaAux(no->getDir(),palavra);
         }else{
@@ -43,27 +44,21 @@ void TrieTernaria::insere(string palavra){
 
 No_Ter* TrieTernaria::insereAux(No_Ter* no, string palavra){
 
-    cout << "Inserindo palavra " << palavra << endl;
     char caractere = palavra.at(0);
 
     if(no == NULL){
         no = new No_Ter();
         no->setChar(caractere);
-        cout << "No NULL encontrado! Caractere "<<caractere<<" inserido! " <<endl;
     }
 
     if(caractere > no->getChar()){
-        cout << "Inserindo " << palavra << " na direita! " << endl;
         no->setDir(insereAux(no->getDir(),palavra));
     }else if(caractere < no->getChar()){
-        cout << "Inserindo " << palavra << " na esquerda! " << endl;
         no->setEsq(insereAux(no->getEsq(),palavra));
     }else{
         if(palavra.size() == 1){
-            cout << "Ultimo caractere! "<< endl;
             no->setChave(true);
         }else{
-            cout << "Inserindo " << palavra.substr(1,palavra.size())<< " no meio! "<< endl;
             no->setMeio(insereAux(no->getMeio(),palavra.substr(1,palavra.size())));
         }
     }
