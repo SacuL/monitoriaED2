@@ -1,0 +1,320 @@
+# depslib dependency file v1.0
+1466431270 source:/home/batman/Dropbox/ed2/codigosBeta/Arvore B/src/arvoreB.cpp
+	<iostream>
+	<stdlib.h>
+	"arvoreB.h"
+
+1466424242 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/arvoreB.h
+	<No_B.h>
+
+1466429482 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_B.h
+
+1466424924 source:/home/batman/Dropbox/ed2/codigosBeta/Arvore B/src/imprimeEstrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/GL/glut.h
+	"freeglut_std.h"
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/GL/freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1465563886 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/imprimeEstrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+	<No_HUF.h>
+	<No_VP.h>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No.h
+	<stdlib.h>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/Lista.h
+	"No_Lista.h"
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_Lista.h
+	<stdlib.h>
+	<string>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/NoBinomial.h
+	<stdlib.h>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_MW.h
+	<iostream>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_Ter.h
+	<stdlib.h>
+
+1465560920 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_HUF.h
+	<stdlib.h>
+
+1465562982 /home/batman/Dropbox/ed2/codigosBeta/Arvore B/include/No_VP.h
+	<stdlib.h>
+
+1465560920 source:/home/batman/Dropbox/ed2/codigosBeta/Arvore B/src/Lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1466431464 source:/home/batman/Dropbox/ed2/codigosBeta/Arvore B/src/main.cpp
+	<iostream>
+	<imprimeEstrutura.h>
+	<arvoreB.h>
+	<time.h>
+
+1468624297 source:/home/batman/Downloads/Arvore Patricia/src/ArvorePatricia.cpp
+	<ArvorePatricia.h>
+
+1468620761 /home/batman/Downloads/Arvore Patricia/include/ArvorePatricia.h
+	<No_PAT.h>
+
+1468623589 /home/batman/Downloads/Arvore Patricia/include/No_PAT.h
+	<iostream>
+
+1468624044 source:/home/batman/Downloads/Arvore Patricia/src/imprimeEstrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/GL/glut.h
+	"freeglut_std.h"
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/GL/freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1468359370 /home/batman/Downloads/Arvore Patricia/include/imprimeEstrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+	<No_HUF.h>
+	<No_VP.h>
+	<No_PAT.h>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/No.h
+	<stdlib.h>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/Lista.h
+	"No_Lista.h"
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/No_Lista.h
+	<stdlib.h>
+	<string>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/NoBinomial.h
+	<stdlib.h>
+
+1466440282 /home/batman/Downloads/Arvore Patricia/include/No_B.h
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/No_MW.h
+	<iostream>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/No_Ter.h
+	<stdlib.h>
+
+1465571720 /home/batman/Downloads/Arvore Patricia/include/No_HUF.h
+	<stdlib.h>
+
+1466190988 /home/batman/Downloads/Arvore Patricia/include/No_VP.h
+	<stdlib.h>
+
+1465571720 source:/home/batman/Downloads/Arvore Patricia/src/Lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1468624092 source:/home/batman/Downloads/Arvore Patricia/src/main.cpp
+	<iostream>
+	<ArvorePatricia.h>
+	<imprimeEstrutura.h>
+
+1468624297 source:/home/batman/Dropbox/ed2/Codigos/Arvore Patricia/src/ArvorePatricia.cpp
+	<ArvorePatricia.h>
+
+1469222929 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/ArvorePatricia.h
+	<No_PAT.h>
+
+1468623589 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_PAT.h
+	<iostream>
+
+1468624044 source:/home/batman/Dropbox/ed2/Codigos/Arvore Patricia/src/imprimeEstrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/GL/glut.h
+	"freeglut_std.h"
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/GL/freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1468359370 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/imprimeEstrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+	<No_HUF.h>
+	<No_VP.h>
+	<No_PAT.h>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No.h
+	<stdlib.h>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/Lista.h
+	"No_Lista.h"
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_Lista.h
+	<stdlib.h>
+	<string>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/NoBinomial.h
+	<stdlib.h>
+
+1466440282 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_B.h
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_MW.h
+	<iostream>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_Ter.h
+	<stdlib.h>
+
+1465571720 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_HUF.h
+	<stdlib.h>
+
+1466190988 /home/batman/Dropbox/ed2/Codigos/Arvore Patricia/include/No_VP.h
+	<stdlib.h>
+
+1465571720 source:/home/batman/Dropbox/ed2/Codigos/Arvore Patricia/src/Lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1468624092 source:/home/batman/Dropbox/ed2/Codigos/Arvore Patricia/src/main.cpp
+	<iostream>
+	<ArvorePatricia.h>
+	<imprimeEstrutura.h>
+
+1469223233 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/src/ArvorePatricia.cpp
+	<ArvorePatricia.h>
+
+1469222929 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/ArvorePatricia.h
+	<No_PAT.h>
+
+1468623589 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_PAT.h
+	<iostream>
+
+1468624044 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/src/imprimeEstrutura.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<string>
+	<iostream>
+	<sstream>
+	"imprimeEstrutura.h"
+	<math.h>
+	<time.h>
+	<thread>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/GL/glut.h
+	"freeglut_std.h"
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/GL/freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1468359370 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/imprimeEstrutura.h
+	<No.h>
+	<Lista.h>
+	<NoBinomial.h>
+	<No_B.h>
+	<No_MW.h>
+	<No_Ter.h>
+	<No_HUF.h>
+	<No_VP.h>
+	<No_PAT.h>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No.h
+	<stdlib.h>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/Lista.h
+	"No_Lista.h"
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_Lista.h
+	<stdlib.h>
+	<string>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/NoBinomial.h
+	<stdlib.h>
+
+1466440282 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_B.h
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_MW.h
+	<iostream>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_Ter.h
+	<stdlib.h>
+
+1465571720 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_HUF.h
+	<stdlib.h>
+
+1466190988 /home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/include/No_VP.h
+	<stdlib.h>
+
+1465571720 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/src/Lista.cpp
+	"Lista.h"
+	<stdlib.h>
+	<cstring>
+	<iostream>
+
+1469225377 source:/home/batman/github/monitoriaED2/Novos Algoritmos/Arvore Patricia/src/main.cpp
+	<iostream>
+	<ArvorePatricia.h>
+	<imprimeEstrutura.h>
+
