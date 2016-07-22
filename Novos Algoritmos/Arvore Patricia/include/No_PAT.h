@@ -36,6 +36,7 @@ class No_PAT{
         void setPosPref(int p){posPref = p;}
         int getPosPref(){return posPref;}
         int getTamAlfa(){return tamAlfa;}
+        void clearChave(){chave.clear();}
         No_PAT *getFilho(char c){
 
             if(c == '\0'){
@@ -57,6 +58,7 @@ class No_PAT{
                 filhos[c-97] = p;
 
             }
+
 
         }
 

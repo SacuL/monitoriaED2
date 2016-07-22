@@ -15,7 +15,8 @@ class ArvorePatricia
         ~ArvorePatricia();
 
     private:
-        void insereRecursivo(string c,int pos, No_PAT *p);
+        No_PAT* insereRecursivo(string c,int pos, No_PAT *p);
+        string buscaStringPai(No_PAT* p);
         No_PAT *buscar(string s, No_PAT *p);
         int tamAlfa;
         No_PAT *raiz;

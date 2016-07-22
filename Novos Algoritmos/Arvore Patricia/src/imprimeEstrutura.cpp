@@ -6,7 +6,9 @@
 #include "imprimeEstrutura.h"
 #include <math.h>
 #include <time.h>
+#ifndef M_PI
 #define M_PI 3.14159265359
+#endif // WIN32
 #include <thread>
 
 using namespace std;
@@ -1797,6 +1799,7 @@ void imprimeEstrutura::desenhaNoPAT(float *posPAT, string valor, int tamAlfa, in
 
                 c[0] = '\\';
                 c[1] = '0';
+                c[2] = '\0';
                 escreve(c,posP[0]+i+0.5, posP[1]-0.5);
 
             }
@@ -1808,7 +1811,7 @@ void imprimeEstrutura::desenhaNoPAT(float *posPAT, string valor, int tamAlfa, in
 
     }else{
 
-        desX = (valor.size()-2)/2.0;
+        desX = (valor.size())/4.0;
         glColor3f(0.0,1.0,0.0);
         glBegin(GL_QUADS);
             glVertex2f(posPAT[0]-desX,posPAT[1]-0.5);

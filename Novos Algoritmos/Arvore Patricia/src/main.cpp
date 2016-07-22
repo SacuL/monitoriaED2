@@ -15,6 +15,10 @@ int main()
     AP->inserir("abdc");
     AP->inserir("abbb");
     AP->inserir("bcdc");
+    AP->inserir("dddd");
+    AP->inserir("dddc");
+    AP->inserir("cc");
+    AP->inserir("c");
     if(AP->buscar("bcd")){
 
         cout << "Existe a string na arvore" << endl;

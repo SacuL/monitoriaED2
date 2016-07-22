@@ -14,40 +14,87 @@ void ArvorePatricia::inserir(string c){
 
     }else{
 
-        insereRecursivo(c,0,raiz);
+        No_PAT* aux = insereRecursivo(c,0,raiz);
+        if(aux != raiz){
 
-    }
+            if(aux != NULL){
 
-}
-void ArvorePatricia::insereRecursivo(string c, int pos, No_PAT *p){
+                aux->setFilho(aux->getChave().at(0),raiz);
+                aux->clearChave();
+                raiz = aux;
 
-    if(p->getPosPref() == -1){
-
-        int aux = diferencaStrings(c,p->getChave(),(unsigned)pos);
-        No_PAT *n = new No_PAT(tamAlfa);
-        n->setChave(p->getChave());
-        p->setFilho(getString(n->getChave(),aux),n);
-        n = new No_PAT(tamAlfa);
-        n->setChave(c);
-        p->setFilho(getString(c,aux),n);
-        p->setPosPref(aux);
-
-    }else{
-
-        No_PAT *n = p->getFilho(getString(c,p->getPosPref()));
-        if(n != NULL){
-
-            insereRecursivo(c,p->getPosPref(),n);
-
-        }else{
-
-            n = new No_PAT(tamAlfa);
-            n->setChave(c);
-            p->setFilho(getString(c,p->getPosPref()),n);
+            }
 
         }
 
     }
+
+}
+No_PAT* ArvorePatricia::insereRecursivo(string c, int pos, No_PAT *p){
+
+    if(p->getPosPref() == -1){
+
+        int desv = diferencaStrings(c,p->getChave(),0);
+        No_PAT *n = new No_PAT(p->getTamAlfa());
+        if(desv >= pos){
+
+            n->setChave(p->getChave());
+            p->setFilho(getString(n->getChave(),desv),n);
+            p->clearChave();
+            n = new No_PAT(tamAlfa);
+            n->setChave(c);
+            p->setFilho(getString(c,desv),n);
+            p->setPosPref(desv);
+            return NULL;
+
+        }else{
+
+            No_PAT *aux = new No_PAT(p->getTamAlfa());
+            n->setPosPref(desv);
+            string auxS;
+            auxS.push_back(p->getChave().at(desv));
+            n->setChave(auxS);
+            aux->setChave(c);
+            n->setFilho(getString(c,desv),aux);
+            return n;
+
+        }
+
+    }else{
+
+        No_PAT *aux = p->getFilho(getString(c,p->getPosPref()));
+        if(aux == NULL){
+
+            aux = new No_PAT(p->getTamAlfa());
+            aux->setChave(c);
+            p->setFilho(getString(c,p->getPosPref()),aux);
+            return NULL;
+
+        }else{
+
+            aux = insereRecursivo(c,p->getPosPref(),aux);
+            if(aux != NULL){
+
+                if(aux->getPosPref() < p->getPosPref()){
+
+                    return aux;
+
+                }else{
+
+                    No_PAT *auxF = p->getFilho(getString(c,p->getPosPref()));
+                    p->setFilho(getString(c,p->getPosPref()),aux);
+                    aux->setFilho(aux->getChave().at(0),auxF);
+                    return NULL;
+
+                }
+
+            }
+
+
+        }
+
+    }
+    return NULL;
 
 }
 bool ArvorePatricia::buscar(string s){
@@ -93,9 +140,15 @@ int ArvorePatricia::diferencaStrings(string c, string s, unsigned int p){
 }
 char ArvorePatricia::getString(string s, unsigned int id){
 
-    string::iterator it = s.begin();
+    if(id >= s.size()){
+
+        return '\0';
+
+    }
+    return s.at(id);
+   /*string::iterator it = s.begin();
     for(unsigned int i = 0; i < id; i++, it++){}
-    return *it;
+    return *it;*/
 
 }
 No_PAT* ArvorePatricia::buscar(string s, No_PAT *p){
@@ -138,6 +191,33 @@ bool ArvorePatricia::comparaStrings(string s, string c){
 
     }
     return true;
+
+}
+string ArvorePatricia::buscaStringPai(No_PAT* p){
+
+    string aux;
+    if(p == NULL){
+
+        return aux;
+
+    }
+    aux = p->getChave();
+    if(aux.size() > 0){
+
+        return aux;
+
+    }
+    for(char c = 'a'; c < p->getTamAlfa(); c++){
+
+        aux = buscaStringPai(p->getFilho(c));
+        if(aux.size() > 0){
+
+            return aux;
+
+        }
+
+    }
+    return aux;
 
 }
 ArvorePatricia::~ArvorePatricia()
