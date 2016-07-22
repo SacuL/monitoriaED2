@@ -38,6 +38,10 @@ int main()
     trie->insere(s12);
     trie->imprime();
 
+    trie->busca(s4);
+    trie->busca(s10);
+    trie->busca("bbc");
+
     imp->finalizaImpressao();
     delete trie;
     delete imp;
